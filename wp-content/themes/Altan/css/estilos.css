@@ -1054,6 +1054,24 @@ ul.nav li a:hover:after {
   .h3, h3 {
     font-size: 1.45rem;
   }
+  #accionistas .vc_tta-panel-heading {
+    background-size: 349px auto;
+  }
+  
+}
+
+@media screen and (max-width: 640px) {
+  #accionistas .vc_tta-panel-heading span.vc_tta-title-text {
+    width: 100%;
+  }
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(1) .vc_tta-panel-heading,
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(2) .vc_tta-panel-heading,
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(3) .vc_tta-panel-heading,
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(4) .vc_tta-panel-heading,
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(5) .vc_tta-panel-heading,
+  #accionistas .vc_tta-panels .vc_tta-panel:nth-child(6) .vc_tta-panel-heading {
+    background-image: none !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1066,6 +1084,11 @@ ul.nav li a:hover:after {
   .h3, h3 {
     font-size: 24px;
   }
+  #accionistas .vc_tta-panel-body {
+    padding: 30px 30px 30px 20px;
+    background-color: #fafafa;
+  }
+}
 @media screen and (max-width: 375px) {
   h1 {
     font-size: 30px;
