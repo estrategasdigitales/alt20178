@@ -1,5 +1,5 @@
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<div class="entrada">	
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bol">
+<div class="entrada boletines">	
 	<?php
 	//echo '<div style="background-image:url(';
    	//if ( has_post_thumbnail() ) {the_post_thumbnail_url('medium');}else{}
@@ -10,6 +10,6 @@
 		<?php the_time("F d, Y"); ?>
 	</p>
 	<?php the_excerpt(); ?>
-	<p><a class="ver-mas" href="<?php the_permalink(); ?>">Ver más</a></p>
+	<p><a class="ver-mas" href="<?php the_permalink(); ?>">Leer más</a></p>
 </div>
 </div>

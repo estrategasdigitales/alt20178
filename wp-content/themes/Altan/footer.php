@@ -15,10 +15,10 @@
 			</div>
 			
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">Aviso de privacidad</a><br>				
+				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">Aviso de privacidad</a><br>
 			</div>
 
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">				
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 				© 2018 ALTÁN Redes
 			</div>
 

@@ -741,7 +741,10 @@ body.category .entrada {
   padding-bottom: 15px;
   margin-bottom: 30px;
 }
-body.category .entrada.ficha-tecnica {padding-top: 0px;}
+body.category .entrada.boletines {
+  height: 340px;
+}
+body.category .entrada.ficha-tecnica {padding-top: 0px;height: 260px;}
 body.category .entrada h5 a {
   text-decoration: none;
   color: #000000;
@@ -923,6 +926,13 @@ ul.submenu-videos li.current-cat a {
 /*---------*/
 
 
+.alm-btn-wrap .alm-load-more-btn {
+    background: #c41f30 !important;
+    color: #fff;
+    border-radius: 0 !important;
+}
+
+
 
 footer {
   font-size: 16px;
@@ -1057,6 +1067,14 @@ ul.nav li a:hover:after {
   #accionistas .vc_tta-panel-heading {
     background-size: 349px auto;
   }
+  body.category .entrada.boletines {
+    height: auto !important;
+  }
+  body.category .bol {
+    width: 100% !important;
+    max-width: initial;
+    flex: initial;
+  }
   
 }
 
@@ -1072,6 +1090,13 @@ ul.nav li a:hover:after {
   #accionistas .vc_tta-panels .vc_tta-panel:nth-child(6) .vc_tta-panel-heading {
     background-image: none !important;
   }
+}
+
+@media screen and (max-width: 575px) {
+  body.category .entrada.boletines {
+    height: auto !important;
+  }
+  body.category .entrada.ficha-tecnica {height: auto !important;}
 }
 
 @media screen and (max-width: 480px) {

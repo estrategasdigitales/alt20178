@@ -1,4 +1,4 @@
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ficha">
 <div class="entrada ficha-tecnica">	
 	<?php
 	echo '<div style="background-image:url(';
