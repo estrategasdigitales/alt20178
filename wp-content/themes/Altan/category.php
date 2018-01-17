@@ -175,7 +175,7 @@
 				echo do_shortcode('[g-carousel gid="490" per_time="2" rows="2"]');
 			}else if ($current_cat->slug == 'infografias') {
 				echo get_template_part('menu', 'videos');
-				echo do_shortcode('[g-carousel gid="494" per_time="2" rows="2"]');
+				echo do_shortcode('[yottie id="3"]');
 			}else if ($current_cat->slug == 'dispositivos') {
 				$template = 'template_2';
 				// $Marca y $Gama
