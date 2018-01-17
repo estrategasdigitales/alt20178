@@ -1088,6 +1088,17 @@ ul.nav li a:hover:after {
     padding: 30px 30px 30px 20px;
     background-color: #fafafa;
   }
+  #red .vc_tta-panel-body {
+    padding: 30px 30px 30px 20px;
+    background: #efefef;
+    background-image: none; 
+  }
+  #red .vc_tta-panel-heading {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 115px;
+    background-size: 110px auto;
+  }
 }
 @media screen and (max-width: 375px) {
   h1 {
@@ -1098,6 +1109,24 @@ ul.nav li a:hover:after {
   }
   .h3, h3 {
     font-size: 20px;
+  }
+  #red .vc_tta-panel-heading {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    
+  }
+  #red .vc_tta-panels .vc_tta-panel:nth-child(1) .vc_tta-panel-heading,
+  #red .vc_tta-panels .vc_tta-panel:nth-child(2) .vc_tta-panel-heading,
+  #red .vc_tta-panels .vc_tta-panel:nth-child(3) .vc_tta-panel-heading,
+  #red .vc_tta-panels .vc_tta-panel:nth-child(4) .vc_tta-panel-heading,
+  #red .vc_tta-panels .vc_tta-panel:nth-child(5) .vc_tta-panel-heading {
+    background-image: none !important;
+  }
+  #beneficios .vc_tta-panel-heading {
+    padding-top: 0px;
+    padding-bottom: 25px;
+    background-size: 290px auto;
   }
 }
 
