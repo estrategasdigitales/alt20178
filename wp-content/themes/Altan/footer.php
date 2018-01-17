@@ -23,10 +23,10 @@
 			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-2 col-xs-12 text-right redes">
-				<a href="https://mx.linkedin.com/company/alt%C3%A1n-redes">
+				<a href="https://mx.linkedin.com/company/alt%C3%A1n-redes" target="_blank">
 					<i class="fa fa-linkedin-square" aria-hidden="true"></i>
 				</a>
-				<a href="https://twitter.com/ALTANMx">
+				<a href="https://twitter.com/ALTANMx" target="_blank">
 					<i class="fa fa-twitter" aria-hidden="true"></i>
 				</a>
 			</div>
