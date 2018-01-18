@@ -72,7 +72,11 @@ div.next {display:block !important;}
 }else{
 	// echo 'Es escritorio';
 
-	echo $useragent;
+	if (preg_match('/MSIE (.*?);/', $useragent)||preg_match('/Trident (.*?);/', $useragent)) {
+		echo '<h1> ES explorer</h1>';
+	}else{
+		echo '<h1>NO ES EXPLORER</h1>';
+	}
 ?>
 
 
