@@ -72,11 +72,7 @@ div.next {display:block !important;}
 }else{
 	// echo 'Es escritorio';
 
-	if (!preg_match('/MSIE (.*?);/', $useragent)) {
-		echo '<h1> NO es explorer</h1>';
-	}else{
-		echo '<h1>ES EXPLORER</h1>';
-	}
+	echo $useragent;
 ?>
 
 
