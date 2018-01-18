@@ -72,8 +72,71 @@ div.next {display:block !important;}
 }else{
 	// echo 'Es escritorio';
 	if (preg_match("/(Trident\/(\d{2,}|7|8|9)(.*)rv:(\d{2,}))|(MSIE\ (\d{2,}|8|9)(.*)Tablet\ PC)|(Trident\/(\d{2,}|7|8|9))/", $_SERVER["HTTP_USER_AGENT"], $match) != 0) {
-    	echo '<h1>Explorer 11 o inferior.</h1>';
-	}
+?>
+
+<style type="text/css">
+.jR3DCarouselGallery,.jR3DCarouselGalleryCustomeTemplate {
+	margin: 0 auto; /* optional - if want to center align */
+}
+
+.jR3DCarouselGalleryCustomeTemplate .jR3DCarouselCustomSlide:nth-child(4),
+.jR3DCarouselGalleryCustomeTemplate .jR3DCarouselCustomSlide:nth-child(5) {
+	display: none;
+}
+
+.jR3DCarouselGalleryCustomeTemplate .captions{
+	position: relative;
+    padding: 30px;
+    background-color: #c41f30;
+    background-image: url(<?php echo get_template_directory_uri() ?>/images/bg-cubo-side.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom; 
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e8e8e8;	
+}
+.jR3DCarouselGalleryCustomeTemplate a{
+	text-decoration: none;			
+}
+.captions {
+	text-align: left;
+}
+.puesto {
+    width: 100%%;
+    height: auto;
+    padding: 7px;
+    padding-right: 25px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+.puesto a {
+	display: block;
+}
+.puesto h4 {color: #fff;
+	-webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;}
+.puesto span {
+	font-family: 'Khand', sans-serif;
+	font-weight: 600;
+	color: #000;
+}
+
+.puesto:hover a h4 {
+	color: #000;
+}
+
+div.previous {display: block !important;}
+div.next {display:block !important;}
+.mostrar {}
+.ocultar {z-index: -100 !important;}
+</style>
+
+<?php    	
+	}else{
 ?>
 
 
@@ -215,7 +278,10 @@ $(document).ready(function(){
   	})
 </script>
 
-<?php } ?>
+<?php 
+	} 
+}
+?>
 
 <script type="text/javascript">
 $(document).ready(function(){
