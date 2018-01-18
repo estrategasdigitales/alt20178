@@ -71,13 +71,12 @@ div.next {display:block !important;}
 <?php
 }else{
 	// echo 'Es escritorio';
-
-	if (preg_match('/MSIE (.*?);/', $useragent)||preg_match('/Trident (.*?);/', $useragent)) {
-		echo '<h1> ES explorer</h1>';
-	}else{
-		echo '<h1>NO ES EXPLORER</h1>';
+	if (preg_match("/(Trident\/(\d{2,}|7|8|9)(.*)rv:(\d{2,}))|(MSIE\ (\d{2,}|8|9)(.*)Tablet\ PC)|(Trident\/(\d{2,}|7|8|9))/", $_SERVER["HTTP_USER_AGENT"], $match) != 0) {
+    	echo '<h1>Explorer 11 o inferior.</h1>';
 	}
 ?>
+
+
 
 
 
