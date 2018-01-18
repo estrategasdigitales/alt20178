@@ -57,6 +57,12 @@ function shortcode_cubo( $atts ){
   include 'cubo.php';
 }
 add_shortcode( 'cubo', 'shortcode_cubo' );
+//
+// 
+function shortcode_gif( $atts ){
+  include 'gif.php';
+}
+add_shortcode( 'gif', 'shortcode_gif' );
 // 
 function altan_custom_pings( $comment )
 {
