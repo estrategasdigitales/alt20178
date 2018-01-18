@@ -34,7 +34,7 @@ if( preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 	text-align: left;
 }
 .puesto {
-    width: 100%%;
+    width: 100%;
     height: auto;
     padding: 7px;
     padding-right: 25px;
@@ -96,6 +96,9 @@ div.next {display:block !important;}
     height: 100%;
     border: 2px solid #e8e8e8;	
 }
+.jR3DCarouselGalleryCustomeTemplate {
+	max-width: 800px;
+}
 .jR3DCarouselGalleryCustomeTemplate a{
 	text-decoration: none;			
 }
@@ -103,7 +106,7 @@ div.next {display:block !important;}
 	text-align: left;
 }
 .puesto {
-    width: 100%%;
+    width: 100%;
     height: auto;
     padding: 7px;
     padding-right: 25px;
