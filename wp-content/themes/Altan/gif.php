@@ -4,23 +4,23 @@
 <?php 
 $images = get_field('imagenes', 910);
 
-echo '<pre>';
-print_r($images);
-echo '</pre>';
+// echo '<pre>';
+// print_r($images);
+// echo '</pre>';
 
-// echo '<div class="regular slider">';
+echo '<div class="regular slider">';
 
-// $i=0;
-// foreach ($images as $key => $value) {
-// 	echo '<div><a href="';	
-// 	echo $images[$i]['imagen']['url'];
-// 	echo '" data-lightbox="example-set" ><img src="';
-// 	echo $images[$i]['imagen']['sizes']['thumbnail'];
-// 	echo '" ></a></div>';
-// 	$i++;
-// }
+$i=0;
+foreach ($images as $key => $value) {
+	echo '<div><a href="';	
+	echo $images[$i]['imagen']['url'];
+	echo '" data-lightbox="example-set" ><img src="';
+	echo $images[$i]['imagen']['sizes']['thumbnail'];
+	echo '" ></a></div>';
+	$i++;
+}
 
-// echo '</div>';
+echo '</div>';
 
 ?>
 
