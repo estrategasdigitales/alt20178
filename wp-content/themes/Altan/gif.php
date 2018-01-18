@@ -2,24 +2,25 @@
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/slick-theme.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/lightbox.min.css">
 <?php 
-$images = get_field('imagenes', 862);
+$images = get_field('imagenes', 910);
 
-// echo '<pre>';
-// print_r($images);
-// echo '</pre>';
-echo '<div class="regular slider">';
+echo '<pre>';
+print_r($images);
+echo '</pre>';
 
-$i=0;
-foreach ($images as $key => $value) {
-	echo '<div><a href="';
-	echo $images[$i]['imagen']['url'];
-	echo '" data-lightbox="example-set" ><img src="';
-	echo $images[$i]['imagen']['sizes']['thumbnail'];
-	echo '" ></a></div>';
-	$i++;
-}
+// echo '<div class="regular slider">';
 
-echo '</div>';
+// $i=0;
+// foreach ($images as $key => $value) {
+// 	echo '<div><a href="';	
+// 	echo $images[$i]['imagen']['url'];
+// 	echo '" data-lightbox="example-set" ><img src="';
+// 	echo $images[$i]['imagen']['sizes']['thumbnail'];
+// 	echo '" ></a></div>';
+// 	$i++;
+// }
+
+// echo '</div>';
 
 ?>
 
