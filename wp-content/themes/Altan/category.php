@@ -59,7 +59,7 @@
 					
 					if ($current_cat->slug == 'dispositivos') {
 						
-						echo '<h3>Dispositivos</h3><hr>';
+						echo '<h3>Dispositivos homologados a la red compartida</h3><hr>';
 						echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
 						$marcas = get_field_object( 'marca', $post_id = false );						 
 						$marcas = $marcas['choices'];
@@ -108,8 +108,11 @@
 						}
 						echo '</select><br>';
 
-						echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APLICAR FILTRO</a>'
+						echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APLICAR FILTRO</a>';
 
+						echo '<hr>';
+
+						echo '<b><a href="#" target="_blank" style="display:table"><i class="fa fa-external-link-square" aria-hidden="true" style="display:table-cell;padding-right:15px;vertical-align:middle"></i><span style="display:table-cell">Dispositivos compatibles con la banda 28 a nivel mundial</span></a></b>';
 					?>
 
 					

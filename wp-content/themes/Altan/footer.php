@@ -115,6 +115,27 @@ if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('c
 ?>	
 });
 
+$(document).ready(function(){
+	$('ul.nav li').mouseenter(function(){
+		$('ul.nav li').removeClass('current-menu-item');
+	})
+	.mouseleave(function(){		
+		$('ul.nav li.current_page_item').addClass('current-menu-item');
+	});
+
+	$('.submenu-qs').mouseenter(function(){
+		$('ul.nav li').removeClass('current-menu-item');
+		$('ul.nav li:nth-child(2)').addClass('current-menu-item');		
+	})
+	.mouseleave(function(){		
+		$('ul.nav li.current_page_item').addClass('current-menu-item');
+		if (!$('ul.nav li:nth-child(2)').hasClass('current_page_item')) {
+			$('ul.nav li:nth-child(2)').removeClass('current-menu-item');	
+		};
+		
+	});
+});
+
 </script>
 
 
