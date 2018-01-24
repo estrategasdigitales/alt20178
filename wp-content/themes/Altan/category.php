@@ -39,6 +39,15 @@
 		min-height: 700px;
 	}
 	#cont-bloque p, #cont-bloque li {margin-bottom: 10px;}
+	.hover-rojo {
+		-webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+	}
+	.hover-rojo:hover {
+		color: #c41f30 !important;
+	}
 	
 	
 </style>
@@ -59,7 +68,7 @@
 					
 					if ($current_cat->slug == 'dispositivos') {
 						
-						echo '<h3>Dispositivos homologados a la red compartida</h3><hr>';
+						echo '<h3>Dispositivos homologados a la Red Compartida</h3><hr>';
 						echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
 						$marcas = get_field_object( 'marca', $post_id = false );						 
 						$marcas = $marcas['choices'];
@@ -112,7 +121,7 @@
 
 						echo '<hr>';
 
-						echo '<b><a href="#" target="_blank" style="display:table"><i class="fa fa-external-link-square" aria-hidden="true" style="display:table-cell;padding-right:15px;vertical-align:middle"></i><span style="display:table-cell">Dispositivos compatibles con la banda 28 a nivel mundial</span></a></b>';
+						echo '<b><a href="#" target="_blank" style="display:table" class="hover-rojo"><i class="fa fa-external-link-square" aria-hidden="true" style="display:table-cell;padding-right:15px;vertical-align:middle"></i><span style="display:table-cell">Dispositivos compatibles con la banda 28 a nivel mundial</span></a></b>';
 					?>
 
 					
