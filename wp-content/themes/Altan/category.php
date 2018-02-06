@@ -121,7 +121,9 @@
 
 						echo '<hr>';
 
-						echo '<b><a href="#" target="_blank" style="display:table" class="hover-rojo"><i class="fa fa-external-link-square" aria-hidden="true" style="display:table-cell;padding-right:15px;vertical-align:middle"></i><span style="display:table-cell">Dispositivos compatibles con la banda 28 a nivel mundial</span></a></b>';
+						echo '<h5>Dispositivos compatibles con la banda 28 a nivel mundial</h5>';
+						echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Conócelos</a>';
+						echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Conócelos</a>';
 					?>
 
 					

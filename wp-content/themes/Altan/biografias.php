@@ -7,9 +7,9 @@ get_header();
 
 
 <?php
-$E1 = get_field('lado-uno', 226);
-$E2 = get_field('lado-dos', 226);
-$E3 = get_field('lado-tres', 226);
+$E1 = get_field('equipo-altan', 226);
+// $E2 = get_field('lado-dos', 226);
+// $E3 = get_field('lado-tres', 226);
 
 // echo '<pre style="font-size:10px">';
 // print_r($Nequipo);
@@ -65,7 +65,7 @@ $E3 = get_field('lado-tres', 226);
 			<div class="opciones">
 
 				<h5 class="activo"><a href="<?php echo get_site_url(); ?>/biografias">Fichas biográficas</a></h5>
-				<h5><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5>
+				<!-- <h5><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5> -->
 				<hr>
 				<p><b><a href="<?php echo get_site_url(); ?>/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>
 
@@ -97,30 +97,30 @@ $E3 = get_field('lado-tres', 226);
 			?>
 			<?php 
 
-			$i=0;
-			foreach ($E2 as $key => $value) {
-				echo '<div class="side-dos-cv'.$i.'">';
-				echo '<h3>'.$E2[$i]['nombre'].'</h3>';
-				echo '<h5>'.$E2[$i]['puesto'].'</h5>';
-				echo '<p>'.$E2[$i]['cv'].'</p>';
-				echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
-				echo '</div>';
-				$i++;
-			}
+			// $i=0;
+			// foreach ($E2 as $key => $value) {
+			// 	echo '<div class="side-dos-cv'.$i.'">';
+			// 	echo '<h3>'.$E2[$i]['nombre'].'</h3>';
+			// 	echo '<h5>'.$E2[$i]['puesto'].'</h5>';
+			// 	echo '<p>'.$E2[$i]['cv'].'</p>';
+			// 	echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
+			// 	echo '</div>';
+			// 	$i++;
+			// }
 
 			?>
 			<?php 
 
-			$i=0;
-			foreach ($E3 as $key => $value) {
-				echo '<div class="side-tres-cv'.$i.'">';
-				echo '<h3>'.$E3[$i]['nombre'].'</h3>';
-				echo '<h5>'.$E3[$i]['puesto'].'</h5>';
-				echo '<p>'.$E3[$i]['cv'].'</p>';
-				echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
-				echo '</div>';
-				$i++;
-			}
+			// $i=0;
+			// foreach ($E3 as $key => $value) {
+			// 	echo '<div class="side-tres-cv'.$i.'">';
+			// 	echo '<h3>'.$E3[$i]['nombre'].'</h3>';
+			// 	echo '<h5>'.$E3[$i]['puesto'].'</h5>';
+			// 	echo '<p>'.$E3[$i]['cv'].'</p>';
+			// 	echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
+			// 	echo '</div>';
+			// 	$i++;
+			// }
 
 			?>
 		</div>

@@ -6,6 +6,7 @@ if( preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 	// echo 'Es mobil';
 ?>
 <style type="text/css">
+body {overflow-x: hidden !important; }
 .jR3DCarouselGallery,.jR3DCarouselGalleryCustomeTemplate {
 	margin: 0 auto; /* optional - if want to center align */
 }
@@ -75,6 +76,7 @@ div.next {display:block !important;}
 ?>
 
 <style type="text/css">
+body {overflow-x: hidden !important; }
 .jR3DCarouselGallery,.jR3DCarouselGalleryCustomeTemplate {
 	margin: 0 auto; /* optional - if want to center align */
 }
@@ -96,6 +98,7 @@ div.next {display:block !important;}
     height: 100%;
     border: 2px solid #e8e8e8;	
 }
+
 .jR3DCarouselGalleryCustomeTemplate {
 	max-width: 800px;
 }
@@ -128,7 +131,8 @@ div.next {display:block !important;}
 	color: #000;
 }
 
-.puesto:hover a h4 {
+.uno .puesto:hover a h4,
+.dos .puesto:hover a h4 {
 	color: #000;
 }
 
@@ -147,14 +151,15 @@ div.next {display:block !important;}
 
 
 <style type="text/css">
+body {overflow-x: hidden !important; }
 .jR3DCarouselGallery,.jR3DCarouselGalleryCustomeTemplate {
 	margin: 0 auto; /* optional - if want to center align */
 }
 
-.jR3DCarouselGalleryCustomeTemplate .captions{
+.jR3DCarouselGalleryCustomeTemplate .captions {
 	position: relative;
     padding: 30px;
-    padding-top: 75px;
+    padding-top: 60px;
     /*top: -100%;*/
     background-color: #c41f30;
     background-image: url(<?php echo get_template_directory_uri() ?>/images/bg-cubo-side.jpg);
@@ -165,6 +170,7 @@ div.next {display:block !important;}
     height: 100%;
     border: 2px solid #e8e8e8;	
 }
+.jR3DCarouselGalleryCustomeTemplate .captions>h4 {}
 .jR3DCarouselGalleryCustomeTemplate a{
 	text-decoration: none;			
 }
@@ -194,7 +200,8 @@ div.next {display:block !important;}
 	color: #000;
 }
 
-.puesto:hover a h4 {
+.uno .puesto:hover a h4,
+.dos .puesto:hover a h4 {
 	color: #000;
 }
 
@@ -257,7 +264,7 @@ $(document).ready(function(){
 
 			$('div.previous').removeClass('ocultar');
 			$('div.next').removeClass('ocultar');
-		}else if($slide[0]['className'] == 'jR3DCarouselCustomSlide tres'){
+		}else if($slide[0]['className'] == 'jR3DCarouselCustomSlide cuatro'){
 			$('div.next').addClass('ocultar');
 			$('div.previous').addClass('mostrar');
 
@@ -288,7 +295,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$( '.puesto' )
+	$( '.uno .puesto, .dos .puesto' )
 	  .mouseover(function() {
 	    $( this ).find('span.p').hide();
 	    $( this ).find('span.ver').show();
@@ -301,12 +308,12 @@ $(document).ready(function(){
 </script>
 
 <?php
-$ladouno = get_field('lado-uno');
-$ladodos = get_field('lado-dos');
-$ladotres = get_field('lado-tres');
+$equipo = get_field('equipo-altan');
+$consejo = get_field('consejo_admin', 273);
+// $ladotres = get_field('lado-tres');
 
 // echo '<pre style="font-size:10px">';
-// print_r($ladouno);
+// print_r($consejo);
 // echo '</pre>';
  ?>
 
@@ -314,71 +321,107 @@ $ladotres = get_field('lado-tres');
 		
 		<div class="jR3DCarouselGalleryCustomeTemplate sube">
 
+			
 			<div class="jR3DCarouselCustomSlide uno">
-				<div class="captions">
-					
+				<div class="captions">					
+					<h4>Equipo Altán</h4>
 					<?php
 					$i=0;
-					foreach ($ladouno as $key => $value) {
+					foreach ($equipo as $key => $value) {
+
 						echo '<div class="puesto">';
 						echo '<a href="';
 						echo get_site_url().'/biografias?data=side-uno-cv'.$i;
 						echo '">';
-						echo '<h4>'.$ladouno[$i]['nombre'].'</h4>';
-						echo '<span class="p">'.$ladouno[$i]['puesto'].'</span>';
+						echo '<h4>'.$equipo[$i]['nombre'].'</h4>';
+						echo '<span class="p">'.$equipo[$i]['puesto'].'</span>';
 						echo '<span class="ver" style="background-color:#000; color:#fff; padding:2px 10px; display:none">Ver biografía</span>';
 						echo '</a>';
 						echo '</div>';
-						$i++;
+						if ($i == 5) {
+							break;
+						}
+						$i++;						
 					}
 					?>
-
-					
-					
 				</div>
 			</div>
 
 			<div class="jR3DCarouselCustomSlide dos">
-					<div class="captions">
-					
+				<div class="captions">					
+					<h4>Equipo Altán</h4>
 					<?php
-					$i=0;
-					foreach ($ladodos as $key => $value) {
-						echo '<div class="puesto">';
-						echo '<a href="';
-						echo get_site_url().'/biografias?data=side-dos-cv'.$i;
-						echo '">';
-						echo '<h4>'.$ladodos[$i]['nombre'].'</h4>';
-						echo '<span class="p">'.$ladodos[$i]['puesto'].'</span>';
-						echo '<span class="ver" style="background-color:#000; color:#fff; padding:2px 10px; display:none">Ver biografía</span>';
-						echo '</a>';
-						echo '</div>';
-						$i++;
-					}
-					?>
+					$i=6;
+					foreach ($equipo as $key => $value) {
 
-					</div>
-			</div>
-			
-      		<div class="jR3DCarouselCustomSlide tres">
-				<div class="captions">
-					<?php
-					$i=0;
-					foreach ($ladotres as $key => $value) {
 						echo '<div class="puesto">';
 						echo '<a href="';
-						echo get_site_url().'/biografias?data=side-tres-cv'.$i;
+						echo get_site_url().'/biografias?data=side-uno-cv'.$i;
 						echo '">';
-						echo '<h4>'.$ladotres[$i]['nombre'].'</h4>';
-						echo '<span class="p">'.$ladotres[$i]['puesto'].'</span>';
+						echo '<h4>'.$equipo[$i]['nombre'].'</h4>';
+						echo '<span class="p">'.$equipo[$i]['puesto'].'</span>';
 						echo '<span class="ver" style="background-color:#000; color:#fff; padding:2px 10px; display:none">Ver biografía</span>';
 						echo '</a>';
 						echo '</div>';
+						if ($i == 11) {
+							break;
+						}
 						$i++;
 					}
 					?>
 				</div>
 			</div>
+						
+			<div class="jR3DCarouselCustomSlide tres">
+				<div class="captions">
+					<h4>Consejo Administrativo</h4>
+					<?php
+					$i=0;
+					foreach ($consejo as $key => $val) {
+						echo '<div class="puesto">';
+						echo '<a';
+						// echo '<a href="';
+						// echo get_site_url().'/biografias?data=side-uno-cv'.$i;
+						echo '>';
+						echo '<h4>'.$consejo[$i]['nombre'].'</h4>';
+						echo '<span class="p">'.$consejo[$i]['puesto'].'</span>';
+						echo '<span class="ver" style="background-color:#000; color:#fff; padding:2px 10px; display:none">Ver biografía</span>';
+						echo '</a>';
+						echo '</div>';
+						if ($i == 5) {
+							break;
+						}
+						$i++;
+					}
+					?>
+				</div>
+			</div>
+
+			<div class="jR3DCarouselCustomSlide cuatro">
+				<div class="captions">
+					<h4>Consejo Administrativo</h4>
+					<?php
+					$i=6;
+					foreach ($consejo as $key => $val) {
+						echo '<div class="puesto">';
+						echo '<a';
+						// echo '<a href="';
+						// echo get_site_url().'/biografias?data=side-uno-cv'.$i;
+						echo '>';
+						echo '<h4>'.$consejo[$i]['nombre'].'</h4>';
+						echo '<span class="p">'.$consejo[$i]['puesto'].'</span>';
+						echo '<span class="ver" style="background-color:#000; color:#fff; padding:2px 10px; display:none">Ver biografía</span>';
+						echo '</a>';
+						echo '</div>';
+						if ($i == 10) {
+							break;
+						}
+						$i++;
+					}
+					?>
+				</div>
+			</div>
+			
 			
       		<div class="jR3DCarouselCustomSlide">
 				<div class="captions">
