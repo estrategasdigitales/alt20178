@@ -8,19 +8,68 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-	
+
+<?php 
+if (is_category('dispositivos') || is_page('que-ofrecemos')) {
+?>
+
+<?php
+}
+?>
+
 <?php 
 if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('como-operamos') || is_page('nuestro-equipo')) 
 {
 ?>
-<style type="text/css">
-.submenu-qs {display: block !important;}
-</style>
-<?php
-}else{
 
+
+
+<?php
 }
-?>	
+
+if (is_front_page()) {
+?>
+
+<style type="text/css">
+	div#header {
+		background-color: rgba(0,0,0,0.1) !important;
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 106px;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+	}
+	ul.nav li a {
+		color: #ffffff !important;
+	}
+	ul.nav li a:hover {
+		color: #c41f30 !important;
+	}
+	ul.nav li.menu-item.current-menu-item > a, ul.nav li.menu-item.current-page-ancestor > a {
+    	color: #c41f30 !important;
+	}
+	.submenu-qs,
+	.submenu-qo {
+		position: fixed;
+		top: 106px;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	@media screen and (max-width: 991px){
+		.navbar-collapse {
+			background-color: rgba(0, 0, 0, 0.8);
+			margin-right: -15px;
+    		margin-left: -15px;
+		}
+	}
+</style>
+
+<?php
+}
+?>
+
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/estilos.css" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.2.1.min.js"></script>
@@ -31,6 +80,7 @@ if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('c
 </head>
 <body <?php body_class(); ?>>
 
+<!--
 <div class="container-fluid acceso-clientes">
 
 	<div class="container">
@@ -42,6 +92,7 @@ if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('c
 	</div> 
  
 </div>
+-->
 
 <div id="header">
 	
@@ -49,7 +100,17 @@ if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('c
 
 		<nav class="navbar navbar-expand-lg row">
 		  <a class="navbar-brand" href="<?php echo get_site_url(); ?>">
-		  	<img src="<?php echo get_template_directory_uri(); ?>/images/logo-altan.png">	
+		  <?php
+		  	if (is_front_page()) {
+		  ?>
+		  	<img src="<?php echo get_template_directory_uri(); ?>/images/logo-altan-bco.png">
+		  <?php
+		  	}else{
+		  ?>
+		  	<img src="<?php echo get_template_directory_uri(); ?>/images/logo-altan.png">
+		  <?php
+		  	}
+		  ?>
 		  </a>
 
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +148,14 @@ if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('c
 		<div class="container">
 			<?php
 		    	wp_nav_menu( array( 'theme_location' => 'sub-menu-qs', 'container' => '', 'items_wrap' => '<ul>%3$s</ul>' ) );
+		    ?>
+	    </div>
+	</div>
+
+	<div class="submenu-qo">
+		<div class="container">
+			<?php
+		    	wp_nav_menu( array( 'theme_location' => 'sub-menu-qo', 'container' => '', 'items_wrap' => '<ul>%3$s</ul>' ) );
 		    ?>
 	    </div>
 	</div>	

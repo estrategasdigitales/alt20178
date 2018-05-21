@@ -12,13 +12,13 @@ $consejo = get_field('consejo_admin');
 // echo '<pre style="font-size:10px">';
 // print_r($consejo);
 // echo '</pre>';
+// prueba de cambio
  ?>
 
 <style type="text/css">
 	body {
 		background-color: #f9f9f9;
-	}
-	
+	}	
 	.seccion, .biografias {
 		padding-top: 50px;
 	}
@@ -34,14 +34,37 @@ $consejo = get_field('consejo_admin');
 		border-left: 3px solid #000;
     	padding-left: 10px;
 	}
-	.fijo {position: fixed;top: 20px;}
+	.fijo {position: fixed;top: 20px;max-width: 380px;}
 	div.bio-consejo {
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    padding-top: 40px;
+    padding-bottom: 10px;
+    /*border-bottom: 1px solid rgba(0,0,0,.1);*/
+    padding-top: 10px;
 	}
-	div.bio-consejo:last-child {
-		border-bottom: none;
+	div.bio-consejo div {background-color: #fff;padding: 10px;position: relative;padding-left: 22px;}
+	div.bio-consejo div h4 {margin-bottom: 0;}
+	div.bio-consejo div p {margin-bottom: 0;}
+	div.bio-consejo div:before {
+		content: " ";
+	  width: 7px;
+	  height: 7px;
+	  background-color: #c41f30;
+	  display: inline-block;
+	  position: absolute;
+	  top: 50%;
+	  left: 7px;
+	  margin-top: -3.5px;
+
+	  transform: translateY(-50%);
+	  -webkit-transform: translateY(-50%);
+	  -moz-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  -o-transform: translateY(-50%);
+
+	  transform: rotate(-50deg);
+	  -webkit-transform: rotate(-50deg);
+	  -moz-transform: rotate(-50deg);
+	  -ms-transform: rotate(-50deg);
+	  -o-transform: rotate(-50deg);
 	}
 </style>
 
@@ -55,18 +78,18 @@ $consejo = get_field('consejo_admin');
 		<div class="col-md-4 franja-izquierda seccion">
 			<div class="opciones">
 
-				<h5><a href="<?php echo get_site_url(); ?>/biografias">Fichas biográficas</a></h5>
-				<h5 class="activo"><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5>
-				<hr>
+				
+				<!--<h5 class="activo"><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5>-->
+				
 				<p><b><a href="<?php echo get_site_url(); ?>/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>
+
+				<h1>Consejo de Administración</h1>
 
 			</div>
 
 		</div>
 
 		<div class="col-md-8 biografias" style="background-color:#efefef; padding-bottom:50px">
-			
-			<h2>Consejo de Administración</h2>
 
 			<div class="row">
 			<?php 
@@ -78,13 +101,20 @@ $consejo = get_field('consejo_admin');
 			// 	echo '</div></div>';
 			// 	$i++;
 			// }
-
+			$i=0;
 			foreach ($consejo as $key => $value) {
-				echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bio-consejo">';
-				echo '<h3>'.$value['nombre'].'</h3>';
-				echo $value['biografia'];
-				echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
-				echo '</div>';				
+				echo '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12';
+				if ($i==0) {
+					echo ' offset-lg-3 offset-md-3';
+				}
+				echo ' bio-consejo"><div>';
+				echo '<h4>'.$value['nombre'].'</h4>';
+				echo '<p>';
+				echo $value['puesto'];
+				echo '</p>';
+				//echo '<p class="back"><b><a href="'.get_site_url().'/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>';
+				echo '</div></div>';
+				$i++;				
 			}
 
 			?>

@@ -152,11 +152,11 @@
 
 	             	<hr>
 
-	             	<p>
+	             	<h5>
 	             		Peticiones de prensa: <br>
-						prensaaltanredes@gcya.mx <br>
-						Tel. +52 55 5246 0100
-	             	</p>
+						<span style="color: #c41f30">contacto@altanredes.com <br>
+						Tel. (+52 55) 2601 3935</span>
+	             	</h5>
 	             	<?php } ?>
 				
 
