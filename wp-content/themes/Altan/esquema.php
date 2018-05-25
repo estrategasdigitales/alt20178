@@ -83,6 +83,14 @@ $equipo = get_field('equipo-altan');
 // echo '<pre style="font-size:10px">';
 // print_r($equipo);
 // echo '</pre>';
+
+	if (isset($_GET["lang"])){
+		if ( $_GET["lang"] == "en") {
+		 	$url=get_site_url().'/profiles/?lang=en&data=side-uno-cv';
+		 } 				
+	}else{
+		$url=get_site_url().'/biografias/?data=side-uno-cv';
+	}
 ?>
 
 <?php
@@ -91,7 +99,7 @@ foreach ($equipo as $key => $value) {
 
 	echo '<div class="puesto '.$equipo[$i]['area']['value'].'">';
 	echo '<a href="';
-	echo get_site_url().'/biografias?data=side-uno-cv'.$i;
+	echo $url.$i;
 	echo '">';
 	echo '<h5>'.$equipo[$i]['nombre'].'</h5>';
 	echo '<p class="p">'.$equipo[$i]['puesto'].'</p>';
@@ -109,10 +117,50 @@ foreach ($equipo as $key => $value) {
 	</div>
 
 	<div class="row">
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 com"><div><span class="row">Comercial</span></div></div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 op"><div><span class="row">Operaciones</span></div></div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sop"><div><span class="row">Soporte</span></div></div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ci"><div><span class="row">Control Interno</span></div></div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 com"><div><span class="row">
+		<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Commercial";
+				 } 				
+			}else{
+				echo "Comercial";
+			}
+		 ?>
+		</span></div></div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 op"><div><span class="row">
+		<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Operations";
+				 } 				
+			}else{
+				echo "Operaciones";
+			}
+		 ?>
+		</span></div></div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sop"><div><span class="row">
+		<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Support";
+				 } 				
+			}else{
+				echo "Soporte";
+			}
+		 ?>
+		</span></div></div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ci"><div><span class="row">
+		<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Internal Control";
+				 } 				
+			}else{
+				echo "Control Interno";
+			}
+		 ?>
+		</span></div></div>
 	</div>
 </div>
 

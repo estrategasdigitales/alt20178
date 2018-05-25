@@ -66,14 +66,32 @@
 				
 					<?php $current_cat = get_category($cat); 
 					
-					if ($current_cat->slug == 'dispositivos') {
+					if ($current_cat->slug == 'dispositivos' || $current_cat->slug == 'devices') {
+
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+								echo '<h3>Devices homologated for Red Compartida (band 28/700 MHz)</h3><hr>';
+								echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</a></b></p><hr>';
+
+								$marcas = get_field_object( 'brand', $post_id = false );						 
+								$marcas = $marcas['choices'];
+								$gamas = get_field_object( 'spectrum', $post_id = false );
+								$gamas = $gamas['choices'];
+
+							} 				
+						}else{
+							echo '<h3>Dispositivos homologados a la Red Compartida</h3><hr>';
+							echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
+
+							$marcas = get_field_object( 'marca', $post_id = false );						 
+							$marcas = $marcas['choices'];
+							$gamas = get_field_object( 'gama', $post_id = false );
+							$gamas = $gamas['choices'];					
+						}
+
 						
-						echo '<h3>Dispositivos homologados a la Red Compartida</h3><hr>';
-						echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
-						$marcas = get_field_object( 'marca', $post_id = false );						 
-						$marcas = $marcas['choices'];
-						$gamas = get_field_object( 'gama', $post_id = false );
-						$gamas = $gamas['choices'];
+
+						
 						
 						if (isset($_GET['marca'])) {
 							$cualMarca = $_GET['marca'];

@@ -7,7 +7,14 @@ get_header();
 
 
 <?php
-$E1 = get_field('equipo-altan', 226);
+if (isset($_GET["lang"])){
+	if ( $_GET["lang"] == "en") {
+		$E1 = get_field('equipo-altan', 1488);
+	} 				
+}else{
+	$E1 = get_field('equipo-altan', 226);
+}
+
 // $E2 = get_field('lado-dos', 226);
 // $E3 = get_field('lado-tres', 226);
 
@@ -64,10 +71,31 @@ $E1 = get_field('equipo-altan', 226);
 
 			<div class="opciones">
 
-				<h5 class="activo"><a href="<?php echo get_site_url(); ?>/biografias">Fichas biográficas</a></h5>
+				<h5 class="activo"><a href="<?php echo get_site_url(); ?>/biografias">
+					<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+							echo 'Profiles';
+						} 				
+					}else{
+						echo 'Fichas biográficas';
+					}
+					?>
+					
+				</a></h5>
 				<!-- <h5><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5> -->
 				<hr>
-				<p><b><a href="<?php echo get_site_url(); ?>/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>
+				<p><b><a href="" onclick="goBack()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+				<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+							echo 'Back';
+						} 				
+					}else{
+						echo 'Regresar';
+					}
+				?>
+				</a></b></p>
 
 			</div>
 
@@ -79,7 +107,17 @@ $E1 = get_field('equipo-altan', 226);
 				$cv = $_GET['data'];	
 			}			
 			?>
-			<h2>Fichas biográficas</h2>
+			<h2>
+				<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+							echo 'Profiles';
+						} 				
+					}else{
+						echo 'Fichas biográficas';
+					}
+				?>
+			</h2>
 
 			<?php 
 
@@ -182,7 +220,11 @@ p.back {display: none;}
 	?>
 </script>
 
-
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 <?php get_footer(); ?>
 

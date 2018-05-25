@@ -81,9 +81,31 @@ $consejo = get_field('consejo_admin');
 				
 				<!--<h5 class="activo"><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5>-->
 				
-				<p><b><a href="<?php echo get_site_url(); ?>/quienes-somos/nuestro-equipo/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>
-
-				<h1>Consejo de Administración</h1>
+				<p>
+					<b>
+						<a href="" onclick="goBack()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+							<?php
+								if (isset($_GET["lang"])){
+									if ( $_GET["lang"] == "en") {
+									 	echo "Back";
+									 } 				
+								}else{
+									echo "Regresar";
+								}
+							 ?>
+							
+						</a>
+					</b>
+				</p>
+				<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+						 	echo "<h1>Our board</h1>";
+						 } 				
+					}else{
+						echo "<h1>Consejo de Administración</h1>";
+					}
+				 ?>
 
 			</div>
 
@@ -171,7 +193,11 @@ $(document).ready(function(){
 }
 ?>
 
-
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 <?php get_footer(); ?>
 

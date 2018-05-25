@@ -96,12 +96,20 @@ div.idioma {
   color: #aeaeae;
   font-size: 14px;
 }
-div.idioma a {
-  color: #aeaeae;
-  text-decoration: none;
+div.idioma ul li a {
+    color: #aeaeae !important;
+    text-decoration: none;
+    font-size: inherit !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    background-color: transparent !important;
 }
-div.idioma a.activo {
-  color: #c41f30;
+  div.idioma ul li:first-child {
+    border-right: 1px solid #bebebe;
+  }
+div.idioma ul li a.lang_sel_sel,
+div.idioma ul li a:hover {
+  color: #c41f30 !important;
 }
 
 

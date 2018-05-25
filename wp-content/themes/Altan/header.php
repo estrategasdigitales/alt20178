@@ -132,9 +132,10 @@ if (is_front_page()) {
 		</nav>
 
 		<div class="idioma">
-			<a href="#" class="activo">ES</a>
+			<?php do_action('wpml_add_language_selector'); ?>
+			<!--<a href="#" class="activo">ES</a>
 			<span>|</span>
-			<a href="#">ENG</a>
+			<a href="#">ENG</a>-->
 		</div>
 
 	</div>
