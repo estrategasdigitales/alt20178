@@ -80,7 +80,7 @@
 
 							} 				
 						}else{
-							echo '<h3>Dispositivos homologados a la Red Compartida</h3><hr>';
+							echo '<h3>Dispositivos homologados a la Red Compartida (banda 28/700 Mhz)</h3><hr>';
 							echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
 
 							$marcas = get_field_object( 'marca', $post_id = false );						 
@@ -150,7 +150,17 @@
 					}else{
 					?>
 
-					<h3>Sala de Prensa</h3>
+					<h3>
+						<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Press Room";
+							} 				
+							}else{
+								echo "Sala de Prensa";
+							}
+		 			?>
+					</h3>
 					
 					<ul>
 						<?php 
@@ -171,9 +181,25 @@
 	             	<hr>
 
 	             	<h5>
-	             		Peticiones de prensa: <br>
-						<span style="color: #c41f30">contacto@altanredes.com <br>
-						Tel. (+52 55) 2601 3935</span>
+	             		<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Press request:";
+							} 				
+							}else{
+								echo "Peticiones de prensa:";
+							}
+		 				?><br>
+						<span style="color: #c41f30">prensaaltanredes@gcya.mx <br>
+						<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Phone";
+							} 				
+							}else{
+								echo "Tel.";
+							}
+		 				?> (+52 55) 5246 0100 Exts. 274 & 301</span>
 	             	</h5>
 	             	<?php } ?>
 				

@@ -74,9 +74,29 @@ get_header();
 				
 				<!--<h5 class="activo"><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5>-->
 				
-				<p><b><a href="<?php echo get_site_url(); ?>/que-ofrecemos/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p>
+				<p><b><a href="<?php echo get_site_url(); ?>/que-ofrecemos/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> 
+					<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Back";
+							} 				
+							}else{
+								echo "Regresar";
+							}
+		 			?>
+				</a></b></p>
 
-				<h2>Oferta de Referencia</h2>
+				<h2>
+					<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Commercial Reference Offer";
+							} 				
+							}else{
+								echo "Oferta de Referencia";
+							}
+		 			?>
+				</h2>
 
 			</div>
 

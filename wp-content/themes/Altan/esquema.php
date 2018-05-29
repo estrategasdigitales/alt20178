@@ -24,6 +24,7 @@
 	.esquema div[class^="col-"]>div .puesto:first-child {
 		margin-top: 0;
 	}
+	.esquema .de .puesto, /*Brandon*/
 	.esquema .dg .puesto,
 	.esquema .dc .puesto { border-top: 5px solid #c41f30; }
 	.esquema span.row {
@@ -112,6 +113,7 @@ foreach ($equipo as $key => $value) {
 ?>
 <div class="container esquema">
 	<div class="row justify-content-lg-center">
+		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 de"><div></div></div><!--Brandon-->
 		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 dg"><div></div></div>
 		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 dc"><div></div></div>
 	</div>
@@ -166,6 +168,7 @@ foreach ($equipo as $key => $value) {
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('.directorestrategia').appendTo('.de div');//Brandon
 		$('.directorgeneral').appendTo('.dg div');
 		$('.directorcorporativo').appendTo('.dc div');
 		$('.comercial').appendTo('.com div');

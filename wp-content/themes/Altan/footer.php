@@ -15,12 +15,34 @@
 			</div>
 			
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">Aviso de privacidad</a><br>
+				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">
+
+					<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Privacy Policy";
+				 } 				
+			}else{
+				echo "Aviso de privacidad";
+			}
+		 ?>
+
+				</a><br>
 				© 2018 ALTÁN Redes
 			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<h5>La Red Compartida, es la Red para Todos</h5>
+				<h5>
+				<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+				 			echo "Red Compartida, a Connection for All";
+				 		} 				
+						}else{
+							echo "La Red Compartida, es la Red para Todos";
+						}
+		 		?>
+				</h5>
 			</div>
 
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-right redes">
