@@ -15,14 +15,37 @@
 			</div>
 			
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">Aviso de privacidad</a><br>
-			</div>
+				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">
 
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+					<?php
+			if (isset($_GET["lang"])){
+				if ( $_GET["lang"] == "en") {
+				 	echo "Privacy Policy";
+				 } 				
+			}else{
+				echo "Aviso de privacidad";
+			}
+		 ?>
+
+				</a><br>
 				© 2018 ALTÁN Redes
 			</div>
 
-			<div class="col-lg-4 col-md-4 col-sm-2 col-xs-12 text-right redes">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<h5>
+				<?php
+					if (isset($_GET["lang"])){
+						if ( $_GET["lang"] == "en") {
+				 			echo "Red Compartida, a Connection for All";
+				 		} 				
+						}else{
+							echo "La Red Compartida, es la Red para Todos";
+						}
+		 		?>
+				</h5>
+			</div>
+
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-right redes">
 				<a href="https://mx.linkedin.com/company/alt%C3%A1n-redes" target="_blank">
 					<i class="fa fa-linkedin-square" aria-hidden="true"></i>
 				</a>
@@ -71,48 +94,39 @@ $(document).ready(function(){
 		$('ul.nav li:nth-child(2) a').click(function(event){
     		event.preventDefault();
 		});
+
+		$('ul.nav li:nth-child(4) a').click(function(event){
+    		event.preventDefault();
+		});
 	};
 	
-<?php 
-if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('como-operamos') || is_page('nuestro-equipo')) 
-{
+	<?php 
+	if (is_page('quienes-somos') || is_page('nuestros-inversionistas') || is_page('como-operamos') || is_page('nuestro-equipo')) 
+	{
+	?>
 
-}else{
-?>	
-	$('ul.nav li:nth-child(2)').mouseenter(function(){
-		$(this).addClass('vis');
-		// $('.submenu-qs').addClass('vis');
-		$('.submenu-qs').slideDown(400, "swing");
-	})
-	.mouseleave(function(){
-		$(this).removeClass('vis');
-		setTimeout(function(){
-			if (!$('.submenu-qs').hasClass('vis')) {
-				$('.submenu-qs').slideUp(400, "swing");
-			}
-		},600);
 		
 
-	});
-
-
-
-	$('.submenu-qs').mouseenter(function(){
-		$(this).addClass('vis');
-	})
-	.mouseleave(function(){
-		$(this).removeClass('vis');
-		setTimeout(function(){
-			if (!$('ul.nav li:nth-child(2)').hasClass('vis')) {
-				$('.submenu-qs').slideUp(400, "swing");
-			}
-		},600);
+	<?php
+	}else{
+	?>	
 		
-	});
 
-<?php
-}
-?>	
+	<?php
+	}
+	?>
+
+	<?php 
+	if (is_category('dispositivos') || is_page('que-ofrecemos')) 
+	{
+
+	}else{
+	?>	
+		
+
+	<?php
+	}
+	?>
 });
 
 $(document).ready(function(){
@@ -134,6 +148,80 @@ $(document).ready(function(){
 		};
 		
 	});
+
+	$('.submenu-qo').mouseenter(function(){
+		$('ul.nav li').removeClass('current-menu-item');
+		$('ul.nav li:nth-child(4)').addClass('current-menu-item');		
+	})
+	.mouseleave(function(){		
+		$('ul.nav li.current_page_item').addClass('current-menu-item');
+		if (!$('ul.nav li:nth-child(4)').hasClass('current_page_item')) {
+			$('ul.nav li:nth-child(4)').removeClass('current-menu-item');	
+		};
+		
+	});
+
+	$('ul.nav li:nth-child(2)').mouseenter(function(){
+			$(this).addClass('vis');
+			// $('.submenu-qs').addClass('vis');
+			$('.submenu-qs').slideDown(200, "swing");
+		})
+		.mouseleave(function(){
+			$(this).removeClass('vis');
+			setTimeout(function(){
+				if (!$('.submenu-qs').hasClass('vis')) {
+					$('.submenu-qs').slideUp(200, "swing");
+				}
+			},200);
+			
+
+		});
+
+
+
+		$('.submenu-qs').mouseenter(function(){
+			$(this).addClass('vis');
+		})
+		.mouseleave(function(){
+			$(this).removeClass('vis');
+			setTimeout(function(){
+				if (!$('ul.nav li:nth-child(2)').hasClass('vis')) {
+					$('.submenu-qs').slideUp(200, "swing");
+				}
+			},300);
+			
+		});
+
+	$('ul.nav li:nth-child(4)').mouseenter(function(){
+			$(this).addClass('vis');
+			// $('.submenu-qs').addClass('vis');
+			$('.submenu-qo').slideDown(200, "swing");
+		})
+		.mouseleave(function(){
+			$(this).removeClass('vis');
+			setTimeout(function(){
+				if (!$('.submenu-qo').hasClass('vis')) {
+					$('.submenu-qo').slideUp(200, "swing");
+				}
+			},300);
+			
+
+		});
+
+
+
+		$('.submenu-qo').mouseenter(function(){
+			$(this).addClass('vis');
+		})
+		.mouseleave(function(){
+			$(this).removeClass('vis');
+			setTimeout(function(){
+				if (!$('ul.nav li:nth-child(4)').hasClass('vis')) {
+					$('.submenu-qo').slideUp(200, "swing");
+				}
+			},300);
+			
+		});
 });
 
 </script>

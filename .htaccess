@@ -1,12 +1,16 @@
-
-# BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
+<<<<<<< HEAD
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+=======
+RewriteBase /alt20178/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /alt20178/index.php [L]
+>>>>>>> 86d8098a92e981f0f9f0bc575164e6c032d6bf59
 </IfModule>
-
-# END WordPress

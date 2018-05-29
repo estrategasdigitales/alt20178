@@ -22,7 +22,11 @@ define('DB_NAME', 'altanv2');
 define('DB_USER', 'root');
 
 /** Tu contraseña de MySQL */
+<<<<<<< HEAD
 define('DB_PASSWORD', 'QUfFOW3i5i3v');
+=======
+define('DB_PASSWORD', 'contrasena');
+>>>>>>> 86d8098a92e981f0f9f0bc575164e6c032d6bf59
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
 define('DB_HOST', 'localhost');

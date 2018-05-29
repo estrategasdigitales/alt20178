@@ -1,5 +1,5 @@
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bol">
-<div class="entrada boletines">	
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="entrada">	
 	<?php
 	//echo '<div style="background-image:url(';
    	//if ( has_post_thumbnail() ) {the_post_thumbnail_url('medium');}else{}

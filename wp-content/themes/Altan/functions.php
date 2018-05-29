@@ -11,7 +11,8 @@ if ( ! isset( $content_width ) ) $content_width = 640;
 register_nav_menus(
 array( 
 	'main-menu' => __( 'Main Menu', 'altan' ),
-	'sub-menu-qs' => __( 'Sub Menu Quienes Somos', 'altan' ), 
+	'sub-menu-qs' => __( 'Sub Menu Quienes Somos', 'altan' ),
+	'sub-menu-qo' => __( 'Sub Menu Que Ofrecemos', 'altan' ), 
 	'footer-menu-derecha' => __( 'Footer Menu Derecha', 'altan' ),
 	'footer-menu-izquierda' => __( 'Footer Menu Izquierda', 'altan' )
 	)
@@ -57,6 +58,12 @@ function shortcode_cubo( $atts ){
   include 'cubo.php';
 }
 add_shortcode( 'cubo', 'shortcode_cubo' );
+//
+// 
+function shortcode_esquema( $atts ){
+  include 'esquema.php';
+}
+add_shortcode( 'esquema', 'shortcode_esquema' );
 //
 // 
 function shortcode_gif( $atts ){
