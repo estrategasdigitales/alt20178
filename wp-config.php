@@ -16,13 +16,13 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'altan');
+define('DB_NAME', 'altanv2');
 
 /** Tu nombre de usuario de MySQL */
 define('DB_USER', 'root');
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'QUfFOW3i5i3v');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
 define('DB_HOST', 'localhost');
@@ -70,7 +70,8 @@ $table_prefix  = 'wp_';
  * en sus entornos de desarrollo.
  */
 define('WP_DEBUG', true);
-define('WP_MEMORY_LIMIT', '256M');
+define('WP_MEMORY_LIMIT', '1024M');
+define('FS_METHOD', 'direct');
 
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
