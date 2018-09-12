@@ -727,6 +727,11 @@ class PUM_ListTable {
 		$output = '<span class="displaying-num">' . sprintf( _n( '%s item', '%s items', $total_items ), number_format_i18n( $total_items ) ) . '</span>';
 
 		$current = $this->get_pagenum();
+
+		if ( ! function_exists( 'wp_removable_query_args') ) {
+			require_once Popup_Maker::$DIR . 'includes/compatibility/function-wp_removable_query_args.php';
+		}
+
 		$removable_query_args = wp_removable_query_args();
 
 		$current_url = set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
@@ -1302,7 +1307,7 @@ class PUM_ListTable {
 			$response['total_pages_i18n'] = number_format_i18n( $this->_pagination_args['total_pages'] );
 		}
 
-		die( wp_json_encode( $response ) );
+		die( PUM_Utils_Array::safe_json_encode( $response ) );
 	}
 
 	/**
@@ -1318,6 +1323,6 @@ class PUM_ListTable {
 			)
 		);
 
-		printf( "<script type='text/javascript'>list_args = %s;</script>\n", wp_json_encode( $args ) );
+		printf( "<script type='text/javascript'>list_args = %s;</script>\n", PUM_Utils_Array::safe_json_encode( $args ) );
 	}
 }

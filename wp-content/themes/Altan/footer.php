@@ -1,3 +1,6 @@
+<?php
+$idioma= ICL_LANGUAGE_CODE;
+?>
 <div class="clear"></div>
 
 <footer id="footer" role="contentinfo">
@@ -15,15 +18,24 @@
 			</div>
 			
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="<?php echo get_site_url(); ?>/aviso-de-privacidad/">
+				
+				<a href="<?php echo get_site_url(); ?>
+				<?php
+				if ( $idioma == "en") {
+				 	echo '/en/aviso-de-privacidad/';
+				 } 				
+				else{
+				echo '/aviso-de-privacidad/';
+				}
+		 		?>
+				">
 
 					<?php
-			if (isset($_GET["lang"])){
-				if ( $_GET["lang"] == "en") {
-				 	echo "Privacy Policy";
+			if ( $idioma == "en") {
+				 	echo "Privacy Policies";
 				 } 				
-			}else{
-				echo "Aviso de privacidad";
+			else{
+				echo "Avisos de privacidad";
 			}
 		 ?>
 
@@ -34,12 +46,11 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<h5>
 				<?php
-					if (isset($_GET["lang"])){
-						if ( $_GET["lang"] == "en") {
-				 			echo "Red Compartida, a Connection for All";
+					if ( $idioma == "en") {
+				 			echo "Red Compartida a Connection for All";
 				 		} 				
-						}else{
-							echo "La Red Compartida, es la Red para Todos";
+						else{
+							echo "La Red Compartida es la Red para Todos";
 						}
 		 		?>
 				</h5>
@@ -62,7 +73,120 @@
 		
 	</div>
 </footer>
-
+<!--//BLOQUE COOKIES-->
+<!--Style-->
+<style type="text/css">
+	@media screen and (max-width: 1024px) 
+	{
+		#barraaceptacion
+		{
+			min-height:125px !important;
+		}
+	}
+	@media screen and (max-width: 775px) 
+	{
+		#barraaceptacion
+		{
+			min-height:145px !important;
+		}
+	}
+	@media screen and (max-width: 655px) 
+	{
+		#barraaceptacion
+		{
+			min-height:170px !important;
+		}
+	}
+	@media screen and (max-width: 540px) 
+	{
+		#barraaceptacion
+		{
+			min-height:195px !important;
+		}
+	}
+	@media screen and (max-width: 482px) 
+	{
+		#barraaceptacion
+		{
+			min-height:230px !important;
+		}
+	}
+	@media screen and (max-width: 420px) 
+	{
+		#barraaceptacion
+		{
+			min-height:240px !important;
+		}
+	}
+	@media screen and (max-width: 416px) 
+	{
+		#barraaceptacion
+		{
+			min-height:260px !important;
+		}
+	}
+	@media screen and (max-width: 380px) 
+	{
+		#barraaceptacion
+		{
+			min-height:265px !important;
+		}
+	}
+	@media screen and (max-width: 360px) 
+	{
+		#barraaceptacion
+		{
+			min-height:275px !important;
+		}
+	}
+#barraaceptacion {
+    display:none;
+    position:fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    padding-bottom:20px;
+    width:100%;
+    text-align:center;
+    min-height:100px;
+    background-color: #ededed;
+    color: black;
+    z-index:99999;
+}
+ 
+.inner {
+    width:100%;
+    position:absolute;
+    padding-left:15px;
+    padding-right: 15px;
+    font-family: 'Encode Sans', sans-serif;
+    font-size:14px;
+    top:10%;
+}
+ 
+.inner a.ok {
+    padding:4px;
+    color: black !important;
+    font-weight: bold;
+    text-decoration:none;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 12px !important;
+}
+ 
+.inner a.info {
+    padding-left:5px;
+    text-decoration:none;
+    color: black;
+    font-weight: bold;
+}
+.btn-f-aceptar
+{
+	color: #fff;
+	background-color: #c41f30 !important;
+	padding: 5px;
+}
+</style>
+<!--style-->
 <script type="text/javascript">
 	
 	// $(document).ready(function(){
@@ -226,7 +350,14 @@ $(document).ready(function(){
 
 </script>
 
+<script type="text/javascript">
+	$(function () {
+  		$(document).scroll(function () {
+    		var $nav = $("#header");
+    		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  		});
+	});
+</script>
 
-
-
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 

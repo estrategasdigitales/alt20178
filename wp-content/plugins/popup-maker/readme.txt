@@ -1,12 +1,12 @@
 === Popup Maker - Popup Forms, Optins & More ===
-Contributors: danieliser, wppopupmaker, yogaman5020
+Contributors: danieliser, wppopupmaker
 Author URI: https://wppopupmaker.com/?utm_source=readme-header&utm_campaign=Readme&utm_medium=author-uri
 Plugin URI: https://wppopupmaker.com/?utm_capmaign=Readme&utm_source=readme-header&utm_medium=plugin-uri
 Donate link:
 Tags: marketing, popup, popups, optin, advertising, conversion, responsive popups, promotion, popover, pop-up, pop over, lightbox, conversion, modal
 Requires at least: 3.6
-Tested up to: 4.9.4
-Stable tag: 1.7.9
+Tested up to: 4.9.6
+Stable tag: 1.7.30
 License: GNU Version 3 or Any Later Version
 
 Everything you need to create unique user experiences. Insert forms & other content from your favorite plugins to create custom responsive popups.
@@ -57,16 +57,16 @@ If you are enjoying this wonderful project, [please rate & review it](https://wp
 == Frequently Asked Questions ==
 
 = Where is your documentation? =
-Our documentation is located [here](http://docs.wppopupmaker.com?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=where-are-docs)
+Our documentation is located [here](https://docs.wppopupmaker.com?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=where-are-docs)
 
 = How do I open a popup? =
-Using [Triggers](http://docs.wppopupmaker.com/article/141-triggers-cookies?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=open-a-popup)
+Using [Triggers](https://docs.wppopupmaker.com/article/141-triggers-cookies?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=open-a-popup)
 
 = How do I stop popups from opening repeatedly? =
-Using [Cookies](http://docs.wppopupmaker.com/article/148-cookies?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=stop-opening-repeatedly)
+Using [Cookies](https://docs.wppopupmaker.com/article/148-cookies?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=stop-opening-repeatedly)
 
 = What do I do if I just want a popup to show on a certain page/post/etc? =
-Check out [Conditions](http://docs.wppopupmaker.com/article/140-conditions?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=target-certain-pages)
+Check out [Conditions](https://docs.wppopupmaker.com/article/140-conditions?utm_medium=text-doclink&utm_campaign=Readme&utm_source=readme-faq&utm_content=target-certain-pages)
 
 = How do I make it work with my 3rd party forms? =
 Beginning with Popup Maker v1.7 we now support most forms by default. We do this by adding a hidden field using JavaScript to any form inserted in a popup. This field contains the popup ID.
@@ -100,6 +100,131 @@ There are several common causes for this which include:
 9. Create any popup imaginable using our color pickers and sliders!
 
 == Changelog ==
+
+= v1.7.30 - 09/06/2018 =
+* Improvement: Further added methods to log unique messages only once.
+* Tweak: Remove usage of Freemius.
+* Fix: Added option to disable popups accessibility functionality to resolve some issues with focus trapping.
+* Fix: Issues with log files growing too large. Max file size of 1MB and auto truncate to 250 lines now.
+* Fix: Typo causing issues with Page Template condition.
+* Fix: Typo in privacy link example text.
+* Fix: Typo pointing to incorrect internal method call in new has_cookie method.
+* Fix: Issues with fields not being readonly.
+
+= v1.7.29 - 06/13/2018 =
+* Improvement: Added new enabled() method for the PUM_AssetCache class that checks both is writable and not disabled.
+* Improvement: Added option to disable just asset caching. This should help in the case your server is blocking the use of our JS from the /uploads/ folder with a 403 error.
+* Fix: Bug caused by string representations of boolean values passed in our subscription forms.
+
+= v1.7.28 - 06/10/2018 =
+* Tweak: Improved validation of subscription form data and messaging.
+* Fix: Bug with front end form serialization issue with single checkboxes (privacy field).
+
+= v1.7.27 - 06/08/2018 =
+* Improvement: Added additional variable checks to allow graceful failing during certain JS errors when page cache is out of date.
+
+= v1.7.26 - 06/07/2018 =
+* Fix: Add empty popups array to prevent errors due to page caching.
+
+= v1.7.25 - 06/05/2018 =
+* Tweak: Localized most variables earlier to prevent errors. Added in default values in case they do not get rendered to prevent fatal JS errors.
+* Fix: Tweaked extension activation class to be compatible with PHP 5.2.
+* Fix: Bug where boolean scalar values were changed to "" for json_encode.
+
+= v1.7.24 - 06/04/2018 =
+* Tweak: Updated subscriber table for existing sites that failed to add it properly before.
+
+= v1.7.23 - 06/04/2018 =
+* Improvement: Converted cookie privacy info to tabular rendering.
+* Tweak: Improved update notice text.
+* Fix: Issues with subscriber table not being created. Thanks @jnorell
+* Fix: Bug not allowing more than one cookie for a trigger.
+* Fix: Undefined index errors in shortcake/shortcode-ui integration.
+
+= v1.7.22 - 05/25/2018 =
+* Tweak: Updated Freemius library for GDPR optin support.
+* Improvement: Made all popup loops more reliable.
+* Fix: Error where objects were processed incorrectly.
+* Fix: "Uncaught Error: Call to a member function get_setting() on boolean in /popup-maker/classes/AssetCache.php:314"
+
+= v1.7.21 - 05/24/2018 =
+* Tweak: Clear asset cache on settings save.
+* Improvement: Check that post is singular to prevent Post Selected conditions from working on site index.
+* Improvement: Remove jquery-cookie from assets as we no longer use or load it anywhere.
+* Fix: Missing function errors if you don't have WordPress v4.9.6.
+* Fix: Added better & safer json encoding function that properly sanitizes data for encoding to prevent empty strings for non english sites.
+
+= v1.7.20 - 05/19/2018 =
+* Feature: Support for GDPR Personal Data Exporter
+* Feature: Support for GDPR Personal Data Eraser
+* Feature: New privacy consent field for Subscription Forms for GDPR consent collection.
+* Feature: GDPR privacy policy guide text added.
+* Improvement: Updated dependency libs.
+* Fix: Bug in subscriber tables if no popup ID was stored.
+
+= v1.7.19 - 05/01/2018 =
+* Version bump due to svn file add issues during last commit.
+
+= v1.7.18 - 05/01/2018 =
+* Fix: Typo in JS that may cause errors for some.
+
+= v1.7.17 - 05/01/2018 =
+* Improvement: Added popup option to disable automatic re-triggering of popup after non-ajax form submission.
+* Improvement: Added notice when JS errors occur in Popup Maker admin interfaces with link to documentation for proper diagnosis & reporting.
+* Tweak: Added asset cache reset on update of core version & db version.
+* Tweak: Removed debug code.
+* Tweak: Simplified the post type batch processor setup for extensions.
+* Dev: Added base PUM_Extension_Activator class to standardize extension activation and various other things.
+
+= v1.7.16 - 04/24/2018 =
+* Tweak: Removed debug code.
+* Fix: Issue with valueless shortcode attributes not processing properly.
+* Fix: Issues where our scripts loaded before Ninja Forms scripts did and our integration didn't initialize.
+* Dev: Added helper function to return array of shortcodes and data in usable format from any content.
+* Dev: Added support for measure fields for shortcodes.
+
+= v1.7.15 - 04/14/2018 =
+* Improvement: Removed metadata from object models to reduce cache size as WordPress already has them cached.
+* Tweak: Added new filter and corrected typo in existing ones for extension integrations.
+* Fix: Bug for potentially missing variable.
+* Fix: Bug when using WordPress older than v4.4 and viewing the subscribers table.
+* Fix: Bug where google fonts didn't always get loaded correctly.
+* Fix: Missing styles from Advanced Theme Builder due to misordering.
+
+= v1.7.14 - 03/28/2018 =
+* Fix: Obscure PHP error caused by method from interface was marked abstract in an abstract class inheriting the interface.
+* Fix: Bug when jquery cookie is called from another plugin.
+* Fix: Bug where form submit button triggered popup close when overlay click to close was enabled.
+* Fix: Typo in previous patch for db_var not being updated properly.
+
+= v1.7.13 - 03/27/2018 =
+* Tweak: Added fallback methods for conditions using MobileDetect to prevent errors when for whatever reason it was not loaded properly.
+* Tweak: Added value type check to prevent errors in popup data.
+* Fix: Bug with accessibility forced focus when there is a link in the popup, causing the close button to focus the link before closing.
+* Fix: Bug that caused issues with MC extensions JS loading properly.
+* Fix: Added fail-safe in case variables were not properly declared on page for mce-buttons.js.
+* Fix: Set a deprecated option on new installs for backward compatibility issues.
+* Fix: Selector correction in z-index setting application.
+
+= v1.7.12 - 03/21/2018 =
+* Improvement: Added option to disable the shortcode ui.
+* Tweak: Removed private popup type links from the nav menu editor.
+* Fix: Bug with long term cached assets causing JS errors on nginx servers.
+* Fix: Bug with support for custom popup z-index setting.
+* Fix: Bug where NF loaded before Popup Maker and form actions were missing.
+* Fix: Bugs in close delay settings for form integrations. Was in ms but needed to be in seconds.
+* Fix: Bug where Yoast SEO plugin shows popups in the xml sitemaps and showing Yoast metabox on popup editor.
+
+= v1.7.11 - 03/14/2018 =
+* Fix: Bug where Middle Center option wouldn't stay selected after saving.
+* Fix: Bug with incorrect field dependency for custom height & scrollable options.
+
+= v1.7.10 - 03/14/2018 =
+* Improvement: Further improved compatibility with shortcodes that echo/print rather than return content.
+* Fix: Bug where cookies wouldn't always be set in Edge & Safari due to cookie path including the root url.
+* Fix: Bug that changed the default tag for popup_trigger & popup_close shortcodes.
+* Fix: Bug where extra close buttons didn't always work correctly.
+* Fix: Removal of deprecated function that triggered warnings in PHP 7.2.
 
 = v1.7.9 - 03/14/2018 =
 * Improvement: Replaced usage of pumSerializeForm with pumSerializeObject which is more reliable.
@@ -137,7 +262,7 @@ There are several common causes for this which include:
 * Fix: Missing function for 3rd party plugin backward compatibility (Elementor).
 
 = v1.7.0 - 03/12/2018 =
-This was one of our biggest updates to date in terms of improving existing functionality, reducing maintenance and the time it takes to implement new features in the future.
+This was a monster update, our largest to date in terms of improving existing functionality, reducing maintenance and the time it takes to implement new features in the future.
 
 Noticeably there are a lot of interface changes with this version as we simplified from having many meta boxes in the popup editor to a new single panel interface.
 
@@ -315,8 +440,8 @@ Lastly we now have include our extendable subscription forms right in the free v
 * Tweak: Added CSS override for Ninja Forms datepickers to properly layer them above popups.
 
 = v1.4.20 - 10/13/2016 =
-* Feature: Added [Ninja Forms](https://wppopupmaker.com/grab/ninjaforms?utm_source=readme-changelog&utm_medium=text-link&utm_campaign=Readme&utm_content=ninja-forms-features) success actions for opening & closing popups.
-* Feature: Added new cookie event for successful submission of a [Ninja Forms](https://wppopupmaker.com/grab/ninjaforms) form.
+* Feature: Added [Ninja Forms](https://wppopupmaker.com/grab/ninja-forms?utm_source=readme-changelog&utm_medium=text-link&utm_campaign=Readme&utm_content=ninja-forms-features) success actions for opening & closing popups.
+* Feature: Added new cookie event for successful submission of a [Ninja Forms](https://wppopupmaker.com/grab/ninja-forms) form.
 * Improvement: Added wp.hooks JS library, allowing actions & filters via our plugin JS.
 * Tweaks: Added various admin css tweaks.
 

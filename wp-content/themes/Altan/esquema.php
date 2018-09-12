@@ -80,16 +80,18 @@
 
 <?php
 $equipo = get_field('equipo-altan');
+$idioma= ICL_LANGUAGE_CODE;
 
 // echo '<pre style="font-size:10px">';
 // print_r($equipo);
 // echo '</pre>';
 
-	if (isset($_GET["lang"])){
-		if ( $_GET["lang"] == "en") {
-		 	$url=get_site_url().'/profiles/?lang=en&data=side-uno-cv';
-		 } 				
-	}else{
+	if ($idioma == "en")
+	{
+	 	$url=get_site_url().'/en/profiles/?data=side-uno-cv';
+	} 				
+	else
+	{
 		$url=get_site_url().'/biografias/?data=side-uno-cv';
 	}
 ?>
@@ -112,53 +114,59 @@ foreach ($equipo as $key => $value) {
 }
 ?>
 <div class="container esquema">
-	<div class="row justify-content-lg-center">
-		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 de"><div></div></div><!--Brandon-->
-		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 dg"><div></div></div>
+	<div class="row justify-content-lg-center">		
+		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 dg"><div></div></div>		
+	</div>
+	<div class="row justify-content-lg-center">			
 		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 dc"><div></div></div>
+		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 de"><div></div></div><!--Brandon-->
 	</div>
 
 	<div class="row">
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 com"><div><span class="row">
 		<?php
-			if (isset($_GET["lang"])){
-				if ( $_GET["lang"] == "en") {
-				 	echo "Commercial";
-				 } 				
-			}else{
+			if ($idioma == "en")
+			{
+			 	echo "Commercial";
+			} 				
+			else
+			{
 				echo "Comercial";
 			}
 		 ?>
 		</span></div></div>
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 op"><div><span class="row">
 		<?php
-			if (isset($_GET["lang"])){
-				if ( $_GET["lang"] == "en") {
-				 	echo "Operations";
-				 } 				
-			}else{
+			if ($idioma == "en")
+			{
+			 	echo "Operations";
+			} 				
+			else
+			{
 				echo "Operaciones";
 			}
 		 ?>
 		</span></div></div>
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sop"><div><span class="row">
 		<?php
-			if (isset($_GET["lang"])){
-				if ( $_GET["lang"] == "en") {
-				 	echo "Support";
-				 } 				
-			}else{
+			if ($idioma == "en")
+			{
+			 	echo "Support";
+			} 				
+			else
+			{
 				echo "Soporte";
 			}
 		 ?>
 		</span></div></div>
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ci"><div><span class="row">
 		<?php
-			if (isset($_GET["lang"])){
-				if ( $_GET["lang"] == "en") {
-				 	echo "Internal Control";
-				 } 				
-			}else{
+			if ($idioma == "en")
+			{
+			 	echo "Internal Control";
+			} 				
+			else
+			{
 				echo "Control Interno";
 			}
 		 ?>

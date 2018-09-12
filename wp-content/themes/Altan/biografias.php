@@ -7,11 +7,13 @@ get_header();
 
 
 <?php
-if (isset($_GET["lang"])){
-	if ( $_GET["lang"] == "en") {
-		$E1 = get_field('equipo-altan', 1488);
-	} 				
-}else{
+$idioma= ICL_LANGUAGE_CODE;
+if ($idioma == "en")
+{
+	$E1 = get_field('equipo-altan', 1488);
+} 				
+else
+{
 	$E1 = get_field('equipo-altan', 226);
 }
 
@@ -73,11 +75,12 @@ if (isset($_GET["lang"])){
 
 				<h5 class="activo"><a href="<?php echo get_site_url(); ?>/biografias">
 					<?php
-					if (isset($_GET["lang"])){
-						if ( $_GET["lang"] == "en") {
-							echo 'Profiles';
-						} 				
-					}else{
+					if ($idioma == "en")
+					{
+						echo 'Profiles';
+					}				 								
+					else
+					{
 						echo 'Fichas biográficas';
 					}
 					?>
@@ -85,13 +88,14 @@ if (isset($_GET["lang"])){
 				</a></h5>
 				<!-- <h5><a href="<?php echo get_site_url(); ?>/consejo-de-administracion">Consejo de Administración</a></h5> -->
 				<hr>
-				<p><b><a href="" onclick="goBack()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+				<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
 				<?php
-					if (isset($_GET["lang"])){
-						if ( $_GET["lang"] == "en") {
-							echo 'Back';
-						} 				
-					}else{
+					if ($idioma == "en")
+					{
+						echo 'Back';
+					}				 			
+					else
+					{
 						echo 'Regresar';
 					}
 				?>
@@ -109,11 +113,12 @@ if (isset($_GET["lang"])){
 			?>
 			<h2>
 				<?php
-					if (isset($_GET["lang"])){
-						if ( $_GET["lang"] == "en") {
-							echo 'Profiles';
-						} 				
-					}else{
+					if ($idioma == "en")
+					{
+						echo 'Profiles';
+					}			 			
+					else
+					{
 						echo 'Fichas biográficas';
 					}
 				?>

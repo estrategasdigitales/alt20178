@@ -1,7 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <div class="wrap duplicate_page_settings">
 <h1><?php _e('Duplicate Page Settings ', 'duplicate-page')?><a href="http://www.webdesi9.com/product/duplicate-page-pro/" target="_blank" class="button button-primary"><?php _e('Buy PRO', 'duplicate-page')?></a></h1>
-
 <?php $duplicatepageoptions = array();
 $opt = get_option('duplicate_page_options');
 $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
@@ -84,8 +83,7 @@ endif;
     <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" border="0" name="submit" alt="Make Donations with Paypal">
     </form>
       <hr />
-    </div>
-<?php echo $this->duplicate_page_adsense();?>    
+    </div> 
 </div>
 </div>
 </div>

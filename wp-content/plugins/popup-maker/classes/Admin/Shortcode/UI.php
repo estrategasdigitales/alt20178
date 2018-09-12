@@ -152,7 +152,7 @@ class PUM_Admin_Shortcode_UI {
 	 */
 	public static function mce_external_plugins( $plugin_array ) {
 		return array_merge( $plugin_array, array(
-			'pum_shortcodes' => PUM_Admin_Assets::$js_url . 'mce-buttons' . PUM_Admin_Assets::$suffix . '.js',
+			'pum_shortcodes' => add_query_arg( array( 'version'=> Popup_Maker::$VER ), PUM_Admin_Assets::$js_url . 'mce-buttons' . PUM_Admin_Assets::$suffix . '.js' ),
 		) );
 	}
 
@@ -184,9 +184,8 @@ class PUM_Admin_Shortcode_UI {
 			setup_postdata( $post );
 		}
 
-
 		/** @var string $content Rendered shortcode content. */
-		$content = do_shortcode( $shortcode );
+		$content = PUM_Helpers::do_shortcode( $shortcode );
 
 		/** If no matching tag or $content wasn't rendered die. */
 		if ( ! $shortcode_object || $content == $shortcode ) {

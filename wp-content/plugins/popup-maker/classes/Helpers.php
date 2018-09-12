@@ -12,6 +12,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class PUM_Helpers {
 
+	public static function do_shortcode( $shortcode_text = '' ) {
+		ob_start();
+
+		$content = do_shortcode( $shortcode_text );
+
+		$ob_content = ob_get_clean();
+
+		if ( ! empty( $ob_content ) ) {
+			$content .= $ob_content;
+		}
+
+		return $content;
+	}
+
+	public static function get_shortcodes_from_content( $content ) {
+		$pattern    = get_shortcode_regex();
+		$shortcodes = array();
+		if ( preg_match_all( '/' . $pattern . '/s', $content, $matches ) ) {
+			foreach ( $matches[0] as $key => $value ) {
+				$shortcodes[ $key ] = array(
+					'full_text' => $value,
+					'tag'       => $matches[2][ $key ],
+					'atts'      => shortcode_parse_atts( $matches[3][ $key ] ),
+					'content'   => $matches[5][ $key ],
+				);
+
+				if ( ! empty( $shortcodes[ $key ]['atts'] ) ) {
+					foreach ( $shortcodes[ $key ]['atts'] as $attr_name => $attr_value ) {
+						// Filter numeric keys as they are valueless/truthy attributes.
+						if ( is_numeric( $attr_name ) ) {
+							$shortcodes[ $key ]['atts'][ $attr_value ] = true;
+							unset( $shortcodes[ $key ]['atts'] );
+						}
+					}
+				}
+			}
+		}
+
+		return $shortcodes;
+	}
+
 	public static function upload_dir_url( $path = '' ) {
 		$upload_dir = wp_upload_dir();
 		$upload_dir = $upload_dir['baseurl'];
@@ -27,22 +68,24 @@ class PUM_Helpers {
 	/**
 	 * Sort array by priority value
 	 *
+	 * @deprecated 1.7.20
+	 * @see        PUM_Utils_Array::sort_by_priority instead.
+	 *
 	 * @param $a
 	 * @param $b
 	 *
 	 * @return int
 	 */
 	public static function sort_by_priority( $a, $b ) {
-		if ( ! isset( $a['priority'] ) || ! isset( $b['priority'] ) || $a['priority'] === $b['priority'] ) {
-			return 0;
-		}
-
-		return ( $a['priority'] < $b['priority'] ) ? - 1 : 1;
+		return PUM_Utils_Array::sort_by_priority( $a, $b );
 	}
 
 
 	/**
 	 * Sort nested arrays with various options.
+	 *
+	 * @deprecated 1.7.20
+	 * @see        PUM_Utils_Array::sort instead.
 	 *
 	 * @param array  $array
 	 * @param string $type
@@ -51,25 +94,7 @@ class PUM_Helpers {
 	 * @return array
 	 */
 	public static function sort_array( $array = array(), $type = 'key', $reverse = false ) {
-		if ( ! is_array( $array ) ) {
-			return $array;
-		}
-
-		switch ( $type ) {
-			case 'key':
-				if ( ! $reverse ) {
-					ksort( $array );
-				} else {
-					krsort( $array );
-				}
-				break;
-
-			case 'natural':
-				natsort( $array );
-				break;
-		}
-
-		return array_map( array( __CLASS__, 'sort_array_by_key' ), $array, $type, $reverse );
+		return PUM_Utils_Array::sort( $array, $type, $reverse );
 	}
 
 	public static function post_type_selectlist_query( $post_type, $args = array(), $include_total = false ) {

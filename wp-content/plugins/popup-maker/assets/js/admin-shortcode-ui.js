@@ -14,7 +14,7 @@
      */
     function check_provider() {
         var $provider = $('#pum-shortcode-editor-pum_sub_form #provider'),
-            provider = $provider.val() !== '' ? $provider.val() : pum_admin_vars.default_provider,
+            provider = $provider.val() !== '' && $provider.val() !== 'none' ? $provider.val() : pum_admin_vars.default_provider,
             $provider_tabs = $('.pum-modal-content .tabs .tab a[href^="#pum-shortcode-editor-pum_sub_form_provider_"]'),
             $provider_contents = $('[id^="pum-shortcode-editor-pum_sub_form_provider_"]'),
             $selected_tab = $provider_tabs.filter('[href="#pum-shortcode-editor-pum_sub_form_provider_' + provider + '"]'),
@@ -69,6 +69,10 @@
 
 (function ($) {
     "use strict";
+
+    if (window.pum_shortcode_ui_vars === undefined) {
+        return;
+    }
 
     var I10n = pum_shortcode_ui_vars.I10n || {
             error_loading_shortcode_preview: '',
@@ -144,7 +148,7 @@
              * @returns {*}
              */
             getShortcodeValues: function () {
-                if (typeof this.shortcode === 'undefined' || typeof this.shortcode.attrs === 'undefined' ) {
+                if (typeof this.shortcode === 'undefined' || typeof this.shortcode.attrs === 'undefined') {
                     return {};
                 }
 
@@ -155,7 +159,7 @@
                 }
 
                 if (typeof this.shortcode.attrs.numeric !== 'undefined') {
-                    for(var i=0; i < this.shortcode.attrs.numeric.length; i++) {
+                    for (var i = 0; i < this.shortcode.attrs.numeric.length; i++) {
                         values[this.shortcode.attrs.numeric[i]] = true;
                     }
                 }
@@ -322,8 +326,10 @@
                     event.preventDefault();
 
                     var $form = $(this),
-                        values = $form.pumSerializeObject(),
-                        content = self.formatShortcode(values.attrs);
+                        values = PUM_Admin.forms.parseValues($form.pumSerializeObject().attrs, PUM_Admin.forms.flattenFields(data)),
+                        content;
+
+                    content = self.formatShortcode(values);
 
                     if (typeof callback === 'function') {
                         callback(content);
@@ -331,55 +337,67 @@
 
                     PUM_Admin.modals.closeAll();
                 });
+
+
             }
         };
 
-    $(document).ready(function () {
-        window.wp = window.wp || {};
-        window.wp.mce = window.wp.mce || {};
-        window.wp.mce.pum_shortcodes = window.wp.mce.pum_shortcodes || {};
+    $(document)
+        .on('pumFormDependencyMet pumFormDependencyUnmet', '.pum-shortcode-editor .pum-field', function (event) {
+            var $input = $(this).find(':input');
 
-        _.each(shortcodes, function (args, tag) {
-
-            /**
-             * Create and store a view object for each shortcode.
-             *
-             * @type Object
-             */
-            wp.mce.pum_shortcodes[tag] = _.extend({}, base, {
-                version: args.version || 1,
-                shortcode_args: args,
-                /**
-                 * For compatibility with WP prior to v4.2:
-                 */
-                View: { //
-                    type: tag,
-                    template: function (options) {
-                        return wp.mce.pum_shortcodes[this.type].template(options);
-                    },
-                    postID: $('#post_ID').val(),
-                    initialize: function (options) {
-                        this.shortcode = options.shortcode;
-                        wp.mce.pum_shortcodes[this.type].shortcode_data = this.shortcode;
-                    },
-                    getHtml: function () {
-                        var values = this.shortcode.attrs.named;
-                        if (this.shortcode_args.has_content) {
-                            values._inner_content = this.shortcode.content;
-                        }
-                        return this.template(values);
-                    }
-                }
-
-            });
-
-            /**
-             * Register each view with MCE.
-             */
-            if (typeof wp.mce.views !== 'undefined' && typeof wp.mce.views.register === 'function') {
-                wp.mce.views.register(tag, wp.mce.pum_shortcodes[tag]);
+            if (event.type.toString() === 'pumFormDependencyUnmet') {
+                $input.prop('disabled', true);
+            } else {
+                $input.prop('disabled', false);
             }
+        })
+        .ready(function () {
+            window.wp = window.wp || {};
+            window.wp.mce = window.wp.mce || {};
+            window.wp.mce.pum_shortcodes = window.wp.mce.pum_shortcodes || {};
+
+            _.each(shortcodes, function (args, tag) {
+
+                /**
+                 * Create and store a view object for each shortcode.
+                 *
+                 * @type Object
+                 */
+                wp.mce.pum_shortcodes[tag] = _.extend({}, base, {
+                    version: args.version || 1,
+                    shortcode_args: args,
+                    /**
+                     * For compatibility with WP prior to v4.2:
+                     */
+                    View: { //
+                        type: tag,
+                        template: function (options) {
+                            return wp.mce.pum_shortcodes[this.type].template(options);
+                        },
+                        postID: $('#post_ID').val(),
+                        initialize: function (options) {
+                            this.shortcode = options.shortcode;
+                            wp.mce.pum_shortcodes[this.type].shortcode_data = this.shortcode;
+                        },
+                        getHtml: function () {
+                            var values = this.shortcode.attrs.named;
+                            if (this.shortcode_args.has_content) {
+                                values._inner_content = this.shortcode.content;
+                            }
+                            return this.template(values);
+                        }
+                    }
+
+                });
+
+                /**
+                 * Register each view with MCE.
+                 */
+                if (typeof wp.mce.views !== 'undefined' && typeof wp.mce.views.register === 'function') {
+                    wp.mce.views.register(tag, wp.mce.pum_shortcodes[tag]);
+                }
+            });
         });
-    });
 
 }(jQuery));

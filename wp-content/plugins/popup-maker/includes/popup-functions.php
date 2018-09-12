@@ -33,13 +33,12 @@ function pum_get_popup_id( $popup_id = 0 ) {
  * @since 1.7.0
  *
  * @param int $popup_id
- * @param bool $autoload Autoload post meta.
  * @param bool $force Clears cached instance and refreshes.
  *
  * @return PUM_Model_Popup|false
  */
-function pum_get_popup( $popup_id = 0, $autoload = true, $force = false ) {
-	return PUM_Model_Popup::instance( pum_get_popup_id( $popup_id ), $autoload, $force );
+function pum_get_popup( $popup_id = 0, $force = false ) {
+	return PUM_Model_Popup::instance( pum_get_popup_id( $popup_id ), $force );
 }
 
 /**
@@ -278,7 +277,7 @@ function popmake_clean_popup_data_attr( $data_attr ) {
  * @param int $popup_id
  */
 function popmake_the_popup_data_attr( $popup_id = null ) {
-	echo 'data-popmake="' . esc_attr( json_encode( popmake_get_the_popup_data_attr( $popup_id ) ) ) . '"';
+	echo 'data-popmake="' . esc_attr( wp_json_encode( popmake_get_the_popup_data_attr( $popup_id ) ) ) . '"';
 }
 
 /**

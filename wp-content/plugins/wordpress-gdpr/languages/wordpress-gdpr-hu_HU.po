@@ -1,0 +1,1660 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress GDPR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-24 09:51+0000\n"
+"PO-Revision-Date: 2018-05-25 09:47+0000\n"
+"Last-Translator: wpmaster <info@wpmaster.hu>\n"
+"Language-Team: Magyar\n"
+"Language: hu_HU\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: wordpress-gdpr.php:89
+msgid ""
+"WordPress GDPR requires the Redux Framework Please install or activate it "
+"before!"
+msgstr ""
+"WordPress GDPR használatához szükséges a Redux Framework (ingyenes) "
+"bővítmény telepítése és aktiválása!"
+
+#: admin/options-init.php:28 admin/options-init.php:30
+msgid "WordPress GDPR"
+msgstr ""
+
+#: admin/options-init.php:37
+msgid "GDPR Settings"
+msgstr "GDPR Beállítások"
+
+#: admin/options-init.php:91
+msgid "Information"
+msgstr "Információk"
+
+#: admin/options-init.php:92
+msgid "<p>Need support? Please use the comment function on codecanyon.</p>"
+msgstr ""
+"<p>Segítségre van szükséged? Írj hozzászólást a codacanyon oldalon.</p>"
+
+#: admin/options-init.php:119
+msgid "GDPR"
+msgstr ""
+
+#: admin/options-init.php:121
+msgid "Need support? Please use the comment function on codecanyon."
+msgstr ""
+"<p>Segítségre van szükséged? Írj hozzászólást a codacanyon oldalon.</p>"
+
+#: admin/options-init.php:126
+msgid "General"
+msgstr "Általános beállítások"
+
+#: admin/options-init.php:133
+msgid "Enable"
+msgstr "Bekapcsol"
+
+#: admin/options-init.php:139
+msgid "Domain Name"
+msgstr ""
+
+#: admin/options-init.php:140
+msgid ""
+"Important for Cookie unsettings. E.g. \".yourdomain.com\". Dot before "
+"important for GA-Cookies."
+msgstr ""
+"Fontos a cookie-k kikapcsolásához. \"domainnev.hu\". a pont a GA-Cookie-ok "
+"előtt fontos."
+
+#: admin/options-init.php:147
+msgid "Use WP Core Functions (req. WP 4.9.6 or Higher!)"
+msgstr "Használja a WP Core funkcióját (4.9.6. verziótól)"
+
+#: admin/options-init.php:148
+msgid ""
+"Only check this option, if you are on WP 4.9.6 or later. We will then use "
+"the WP Core functions for Data Export & Erasing. Our built-in GDPR Requests "
+"Menu will be removed."
+msgstr ""
+"Ezt az opciót akkor használhatod ha 4.9.6-os verziót vagy annál frissebbet "
+"használsz. Ezután a WP Core funkciókat használod a Data Export & Erasing "
+"szolgáltatáshoz. Beépített GDPR Kérelmek menüje eltávolításra kerül."
+
+#: admin/options-init.php:154
+msgid "Enable Recaptcha for Forms"
+msgstr "Recaptcha for Forms engedélyezése"
+
+#: admin/options-init.php:155
+msgid ""
+"Install & Setup the <a href=\"https://wordpress.org/plugins/invisible-"
+"recaptcha/\" target=\"_blank\">invisible recaptcha plugin from here</a>. "
+"Then check this option."
+msgstr ""
+"Telepítsd és állítsd be az <a href=\"https://wordpress.org/plugins/invisible-"
+"recaptcha/\" target=\"_blank\">invisible recaptcha plugin-t itt</a>. Ezután "
+"ellenőrizze ezt a lehetőséget."
+
+#: admin/options-init.php:161
+msgid "Allow all Cookies for logged in users"
+msgstr "Engedélyezze az összes cookie-t a bejelentkezett felhasználóknak"
+
+#: admin/options-init.php:162
+msgid "This disables cookie check consents for logged in users."
+msgstr ""
+"Ez letiltja a cookie-ellenőrzést a bejelentkezett felhasználók számára."
+
+#: admin/options-init.php:168
+msgid "Cookie Lifetime."
+msgstr "Cookie élettartam"
+
+#: admin/options-init.php:169
+msgid "Days before the Cookie expires."
+msgstr "Hány nap múlva járjon le a Cookie."
+
+#: admin/options-init.php:180
+msgid "Popup"
+msgstr ""
+
+#: admin/options-init.php:187
+msgid "Enable Popup"
+msgstr "Popup engedélyezése"
+
+#: admin/options-init.php:193
+msgid "Popup Text"
+msgstr "Popup szövege"
+
+#: admin/options-init.php:194
+msgid ""
+"We use cookies to give you the best online experience. By agreeing you "
+"accept the use of cookies in accordance with our cookie policy."
+msgstr ""
+"A weboldalon \"cookie-kat\" (\"sütiket\") használunk, hogy a legjobb "
+"felhasználói élményt nyújthassuk látogatóinknak. A cookie beállítások igény "
+"esetén bármikor megváltoztathatók a böngésző beállításaiban."
+
+#: admin/options-init.php:200
+msgid "Popup Agree Text"
+msgstr "Popup szöveg elfogadása"
+
+#: admin/options-init.php:201 admin/options-init.php:209
+#: admin/options-init.php:217 admin/options-init.php:225
+#: admin/options-init.php:233
+msgid "Leave Empty if not needed"
+msgstr "Hagyd üresen, ha nem szükséges"
+
+#: admin/options-init.php:202
+msgid "I accept"
+msgstr "Elfogadom"
+
+#: admin/options-init.php:208
+msgid "Popup Decline Text"
+msgstr "Elutasítás gomb szövege"
+
+#: admin/options-init.php:210
+msgid "I decline"
+msgstr "Elutasítom"
+
+#: admin/options-init.php:216
+msgid "Popup Privacy Center Text"
+msgstr "Popup Adatvédelmi központ szövege"
+
+#: admin/options-init.php:218 admin/options-init.php:279
+#: public/class-wordpress-gdpr-integrations.php:155
+msgid "Privacy Center"
+msgstr "Adatvédelmi központ"
+
+#: admin/options-init.php:224
+msgid "Popup Privacy Settings Text"
+msgstr "Popup adatvédelmi beállítások szövege"
+
+#: admin/options-init.php:226 admin/options-init.php:1021
+#: public/class-wordpress-gdpr-public.php:304
+msgid "Privacy Settings"
+msgstr "Adatvédelmi beállítások"
+
+#: admin/options-init.php:232
+msgid "Popup Cookie Policy Text"
+msgstr "Popup Cookie szabályzat szöveg"
+
+#: admin/options-init.php:234
+msgid "Learn More about our Cookie Policy"
+msgstr "További információ a cookie-kezelésről"
+
+#: admin/options-init.php:240
+msgid "Popup Style"
+msgstr "Popup stílus"
+
+#: admin/options-init.php:242
+msgid "Full Width"
+msgstr "Teljes szélesség"
+
+#: admin/options-init.php:243
+msgid "Small Width"
+msgstr "Kis szélességű"
+
+#: admin/options-init.php:251
+msgid "Popup Position"
+msgstr "Popup pozíciója"
+
+#: admin/options-init.php:253
+msgid "Top"
+msgstr "Fent"
+
+#: admin/options-init.php:254
+msgid "Bottom"
+msgstr "Lent"
+
+#: admin/options-init.php:262
+msgid "Background Color"
+msgstr "Háttér szine"
+
+#: admin/options-init.php:270
+msgid "Text Color"
+msgstr "Szöveg szine"
+
+#: admin/options-init.php:286 admin/options-init.php:287
+msgid "Enable Privacy Center"
+msgstr "Engedélyezd az adatvédelmi központot"
+
+#: admin/options-init.php:293
+msgid "Privacy Center Page"
+msgstr "Adatvédelmi központ oldal"
+
+#: admin/options-init.php:294
+msgid ""
+"Shortcode: [wordpress_gdpr_privacy_center] This will be the page, where the "
+"privacy center will be shown."
+msgstr ""
+"Shortcode: [wordpress_gdpr_privacy_center] Ez a kódot illeszd be arra az "
+"oldalra ahol az adatvédelmi központot szeretnéd megjeleníteni."
+
+#: admin/options-init.php:302
+msgid "Confirmation Email"
+msgstr "Megerősítő email"
+
+#: admin/options-init.php:309
+msgid "Info"
+msgstr ""
+
+#: admin/options-init.php:310
+msgid "If you use WP 4.9.6 this is no longer needed."
+msgstr "Ha WP 4.9.6-ot használsz, ez már nem szükséges."
+
+#: admin/options-init.php:315
+msgid "Confirmation Email Subject"
+msgstr "A megerősítő e-mail tárgya"
+
+#: admin/options-init.php:316
+msgid "Subject of the confirmation Email."
+msgstr "A megerősítő e-mail tárgya."
+
+#: admin/options-init.php:317
+msgid "GDPR - Confirm your Request"
+msgstr "GDPR - Erősítse meg kérését"
+
+#: admin/options-init.php:323
+msgid "Confirmation Email Text"
+msgstr "Megerősítő e-mail szövege"
+
+#: admin/options-init.php:324
+msgid ""
+"Text of the Email send out to the user to confirm his email to create a new "
+"request."
+msgstr ""
+"Ezt az emailt küldi el a felhasználónak, hogy megerősítse az e-mail címét az "
+"új adat lekérdezéshez."
+
+#: admin/options-init.php:325
+#, php-format
+msgid ""
+"Dear %s,\n"
+"                                <br><br>\n"
+"                                we have received your %s. If this is correct,"
+" please click on the link below. Otherwise ignore this email!"
+msgstr ""
+"Kedves %s,\n"
+"                                <br><br>\n"
+"                                megkaptuk a %s-t. Ha ezt valóban te kérted, "
+"kattintson az alábbi linkre. Ha nem te kérted, hagyd figyelmen kívül ezt az "
+"e-mailt!"
+
+#: admin/options-init.php:334 public/class-wordpress-gdpr-public.php:205
+msgid "Contact DPO"
+msgstr "Kapcsolat"
+
+#: admin/options-init.php:341
+msgid "Enable Contact DPO"
+msgstr "Adatvédelmi kapcsolattartó egedélyezése"
+
+#: admin/options-init.php:342
+msgid "Enable Data Privacy Officer Contact form."
+msgstr "Engedélyezze az adatvédelmi tisztviselő kapcsolatfelvételi űrlapját."
+
+#: admin/options-init.php:348
+msgid "Contact DPO Page"
+msgstr "Kapcsolatfelvétel DPO oldal"
+
+#: admin/options-init.php:349
+msgid "Shortcode: [wordpress_gdpr_contact_dpo]"
+msgstr "Shortcode: [wordpress_gdpr_contact_dpo]"
+
+#: admin/options-init.php:356 admin/options-init.php:511
+#: admin/options-init.php:1096
+msgid "Disable User Exists Check"
+msgstr "Felhasználó ellenőrzés tiltása"
+
+#: admin/options-init.php:357 admin/options-init.php:512
+#: admin/options-init.php:1097
+msgid "This allows all users to create requests for manually processing."
+msgstr "Ez lehetővé teszi, hogy minden felhasználó kézi feldolgozást kérjen."
+
+#: admin/options-init.php:364
+msgid "DPO Email"
+msgstr "Tisztségviselő email címe"
+
+#: admin/options-init.php:365
+msgid "Emails will be sent there."
+msgstr "Ide érkeznek az emailek."
+
+#: admin/options-init.php:372
+msgid "DPO Email Subject"
+msgstr "Email tárgya"
+
+#: admin/options-init.php:373
+msgid "Subject of the DPO contact Email."
+msgstr "Tárgy a tisztségviselőnek elküldött emailben."
+
+#: admin/options-init.php:374
+msgid "GDPR - New Request for DPO"
+msgstr "GDPR - Új kérés a tisztségviselőnek"
+
+#: admin/options-init.php:381 public/class-wordpress-gdpr-public.php:219
+msgid "Cookie Policy"
+msgstr "Cookie kezelés"
+
+#: admin/options-init.php:388
+msgid "Enable Cookie Policy"
+msgstr "Cookie kezelés engedélyezése"
+
+#: admin/options-init.php:389
+msgid "Enable Cookie Policy Page"
+msgstr "Cookie kezelés oldal engedélyezése"
+
+#: admin/options-init.php:395
+msgid "Cookie Policy Page"
+msgstr "Cookie kezelés oldal"
+
+#: admin/options-init.php:396
+msgid "Add your Cookie Policy here."
+msgstr "Add hozzá a Cookie kezelést itt."
+
+#: admin/options-init.php:404
+msgid "Data Breach"
+msgstr "adatok megsértése"
+
+#: admin/options-init.php:411
+msgid "Enable Data Breach"
+msgstr "adatok megsértés engedélyezése"
+
+#: admin/options-init.php:412
+msgid "Enable Data Breach form."
+msgstr "adatok megsértés form engedélyezése"
+
+#: admin/options-init.php:418
+msgid "Data Breach from Email"
+msgstr "adatok megsértés email"
+
+#: admin/options-init.php:419
+msgid "The FROM Email used for data breach issues."
+msgstr "Erről a címről küldjük az adatok megsértéséről szóló emailt."
+
+#: admin/options-init.php:426
+msgid "Data Breach Email Subject"
+msgstr "adatok megsértés email tárgya"
+
+#: admin/options-init.php:427 admin/options-init.php:544
+#: admin/options-init.php:995
+msgid "Subject of the Email."
+msgstr "Email tárgya"
+
+#: admin/options-init.php:428
+msgid "GDPR - Data Breach"
+msgstr "GDPR - adatok megsértés"
+
+#: admin/options-init.php:434
+msgid "Data Breach Email Text"
+msgstr "adatok megsértése email szövege"
+
+#: admin/options-init.php:435
+msgid "Text of the Email regarding a data breach.."
+msgstr "Ezt az emailt küldjük el adatok megsértése esetén."
+
+#: admin/options-init.php:436
+#, php-format
+msgid ""
+"Dear %s,\n"
+"                                <br><br>\n"
+"                                We value your business and respect the "
+"privacy of your information, which is why, as a\n"
+"                                precautionary measure, we are writing to let "
+"you know about a data security incident that may\n"
+"                                involve/involves your personal information.\n"
+"                                <br><br>\n"
+"                                Between XX and XX we discovered a foreign "
+"access to our data."
+msgstr ""
+"Kedves %s,\n"
+"Tiszteletben tartjuk adatait, ezért, \n"
+"                                 elővigyázatosságból értesítünk, hogy "
+"esetleg adatbiztonsági incidens történt."
+
+#: admin/options-init.php:449
+msgid "Send Data Breach Email"
+msgstr "Adatok törlése e-mail küldése"
+
+#: admin/options-init.php:457 public/class-wordpress-gdpr-public.php:233
+msgid "Disclaimer"
+msgstr "Felelősség kizárás"
+
+#: admin/options-init.php:464
+msgid "Enable Disclaimer"
+msgstr "A felelősség kizárás engedélyezése"
+
+#: admin/options-init.php:465
+msgid "Enable Disclaimer form."
+msgstr "Felelősség kizárás form engedélyezése"
+
+#: admin/options-init.php:471
+msgid "Disclaimer Page"
+msgstr "A felelősség kizárás oldala"
+
+#: admin/options-init.php:472 admin/options-init.php:1139
+msgid "Place your "
+msgstr "Helyezd el"
+
+#: admin/options-init.php:481 public/class-wordpress-gdpr-public.php:248
+msgid "Forget Me"
+msgstr "Felejts el"
+
+#: admin/options-init.php:488
+msgid "Enable Forget Me"
+msgstr "Engedélyezd a felejts el oldalt"
+
+#: admin/options-init.php:489
+msgid "Enable Forget Me form."
+msgstr "Engedélyezd a felejts el formot."
+
+#: admin/options-init.php:495
+msgid "Forget Me Page"
+msgstr "Felejts el oldal"
+
+#: admin/options-init.php:496
+msgid "Shortcode: [wordpress_gdpr_forget_me]"
+msgstr ""
+
+#: admin/options-init.php:503
+msgid "Show Delete Data Button for Logged in"
+msgstr "Mutassa az Adatok törlése gombot minden bejelentkezett felhasználónak"
+
+#: admin/options-init.php:504
+msgid ""
+"This will show logged in users a button where they can delete data "
+"theirselves."
+msgstr ""
+"Ezzel a gombbal minden felhasználó jogot kap a saját adatainak törlésére."
+
+#: admin/options-init.php:522
+msgid "Delete Posts & Pages (& all other post types)"
+msgstr "Üzenetek és oldalak törlése (és az összes többi postatípus)"
+
+#: admin/options-init.php:529
+msgid "Delete Comments"
+msgstr "Hozzászólások törlése"
+
+#: admin/options-init.php:543
+msgid "Forget me Deleted Email Subject"
+msgstr "Törlés email tárgya"
+
+#: admin/options-init.php:545
+msgid "GDPR - Your Data has been Deleted"
+msgstr "GDPR - Az adatok törlésre kerültek"
+
+#: admin/options-init.php:551
+msgid "Forget me Deleted Email Text"
+msgstr "Törlés email szövege"
+
+#: admin/options-init.php:552
+msgid "Text of the Email informing the user, that his data has been deleted."
+msgstr "Ez a szöveg kerül kiküldésre az adatok törléséről"
+
+#: admin/options-init.php:553
+#, php-format
+msgid ""
+"Dear %s,\n"
+"                                <br><br>\n"
+"                                we have successfully deleted all your "
+"personal data from our Website."
+msgstr ""
+"Kedves %s,\n"
+"                                <br><br>\n"
+"                                sikeresen töröltük az összes személyes "
+"adatot a weboldalunkról."
+
+#: admin/options-init.php:562 public/class-wordpress-gdpr-public.php:262
+msgid "Imprint"
+msgstr "Impresszum"
+
+#: admin/options-init.php:569
+msgid "Enable Imprint"
+msgstr "Impresszum engedélyezése"
+
+#: admin/options-init.php:570
+msgid "Enable Imprint Page"
+msgstr "Impresszum oldal engedélyezése"
+
+#: admin/options-init.php:576
+msgid "Imprint Page"
+msgstr "Impresszum oldal"
+
+#: admin/options-init.php:577
+msgid "Add your Imprint here."
+msgstr "Impresszum hozzáadása itt."
+
+#: admin/options-init.php:589
+msgid "Integrations"
+msgstr "Integráció"
+
+#: admin/options-init.php:596 admin/options-init.php:603
+msgid "Enable Comments"
+msgstr "Hozzászólások engedélyezése"
+
+#: admin/options-init.php:597
+msgid ""
+"Activated this will add a checkbox to comment form to accept your privay "
+"policy."
+msgstr ""
+"Jelölőnégyzetet ad hozzá az adatvédelmi űrlaphoz az adatvédelmi irányelv "
+"elfogadásához."
+
+#: admin/options-init.php:604
+msgid ""
+"Either you go to settings > discussions and check \"Users must be "
+"registered\" or you activate this setting here. If you do not do this, user "
+"deletion & export will not work, because no accounts are created!"
+msgstr ""
+"Beállításokhoz> beszélések és ellenőrzés a \"Felhasználók regisztrálását\", "
+"aktiválja ezt a beállítást. Ha ezt nem teszi meg, akkor a felhasználó "
+"törlése és exportálása nem fog működni, mert nincsenek fiókok létrehozva!"
+
+#: admin/options-init.php:611
+msgid "Comments Privacy Policy Page"
+msgstr "Hozzászólások Adatvédelmi irányelvek Oldal"
+
+#: admin/options-init.php:612
+msgid ""
+"Assign your privacy policy page here. You could also use a custom one for "
+"Comments"
+msgstr ""
+"Adatvédelmi irányelvek oldal hozzáadása. Egy egyedileg is hozzá lehet adni a "
+"hozzászólásokhoz."
+
+#: admin/options-init.php:619 admin/options-init.php:658
+#: admin/options-init.php:688 admin/options-init.php:794
+msgid "Privacy Policy Accept text"
+msgstr "Adatvédelmi irányelv elfogadása"
+
+#: admin/options-init.php:620 admin/options-init.php:659
+msgid "Text for users to agree on privacy policy on checkout page."
+msgstr ""
+"Szöveg a felhasználók számára az adatvédelmi irányelvek elfogadásáról a "
+"fizetési oldalon."
+
+#: admin/options-init.php:621 admin/options-init.php:660
+msgid "I’ve read and accept the privacy policy."
+msgstr "Elolvastam és elfogadom az adatvédelmi irányelveket."
+
+#: admin/options-init.php:627
+msgid "Enable WooCommerce"
+msgstr "WooCommerce engedélyezése"
+
+#: admin/options-init.php:628
+msgid ""
+"Activated this will add a checkbox to the checkout, registration and product "
+"review form to accept your privay policy. It also adds a menu item to the my "
+"account page for the privacy center. In addtion to this make sure you have "
+"setup a terms and conditions page in WooCommerce settings. With WooCommerce "
+"Version 3.4. you may not need this anymore"
+msgstr ""
+"Aktiválva a jelölőnégyzetet amit hozzáad a fizetési, regisztrációs és termék-"
+"áttekintő űrlaphoz. Hozzáad egy menüpontot az adatvédelmi központom fiókom "
+"oldalához. WooCommerce beállításaiban be kell állítani a szerződési "
+"feltételeket."
+
+#: admin/options-init.php:634
+msgid "Delete WooCommerce Orders"
+msgstr "Woocommerce rendelések törlése"
+
+#: admin/options-init.php:635
+msgid "If enabled WooCommerce Orders will be deleted on Forget Me Request."
+msgstr ""
+"Ha engedélyezett, akkor a WooCommerce megrendelései törlődnek a Felejts el "
+"kéréssel."
+
+#: admin/options-init.php:642
+msgid "Disable Guest Checkout"
+msgstr "Vendégvásárlás letiltása"
+
+#: admin/options-init.php:643
+msgid ""
+"Either you go to WooCommerce > Settings > Checkout and disable Guest "
+"Checkout or you activate this setting here. If you do not do this, user "
+"deletion & export will not work, because no accounts are created!"
+msgstr ""
+"WooCommerce> Beállítások> Pénztár, és letiltsd le a Vendég vásárlás funkciót,"
+" vagy aktiváld ezt a beállítást. Ha ezt nem teszed meg, akkor a felhasználó "
+"törlése és exportálása nem fog működni, mert nincsenek fiókok adatok!"
+
+#: admin/options-init.php:650
+msgid "WooCommerce Privacy Policy Page"
+msgstr "WooCommerce Adatvédelmi Nyilatkozat"
+
+#: admin/options-init.php:651
+msgid ""
+"Assign your privacy policy page here. You could also use a custom one for "
+"WooCommerce"
+msgstr ""
+"Add meg az adatvédelmi irányelvek oldalát. A WooCommerce esetében is "
+"használhatsz egyéni beállítást"
+
+#: admin/options-init.php:666
+msgid "Enable Cloudlfare"
+msgstr "Cloudlfare engedélyezése"
+
+#: admin/options-init.php:667
+msgid ""
+"If you use Cloudlfare enable this. <a href=\"https://support.cloudflare."
+"com/hc/en-us/articles/200170156-What-does-the-Cloudflare-cfduid-cookie-do-\">"
+"See here about __cfduid cookie</a>."
+msgstr ""
+"Ha a Cloudflare-t használsz, engedélyezd ezt. <a href=\"https://support."
+"cloudflare.com/hc/en-us/articles/200170156-What-does-the-Cloudflare-cfduid-"
+"cookie-do-\">Lásd itt a __cfduid cookie-t</a>."
+
+#: admin/options-init.php:673
+msgid "Enable BuddyPress"
+msgstr "BuddyPress engedélyezése"
+
+#: admin/options-init.php:674
+msgid "This will add checkbox to BuddyPress Account registration form."
+msgstr ""
+"Ez a jelölőnégyzetet hozzáadja a BuddyPress fiók regisztrációs űrlapjához."
+
+#: admin/options-init.php:680
+msgid "BuddyPress Privacy Policy Page"
+msgstr "BuddyPress Adatvédelmi irányelvek"
+
+#: admin/options-init.php:681
+msgid ""
+"Assign your privacy policy page here. You could also use a custom one for "
+"BuddyPress"
+msgstr ""
+"Adja meg az adatvédelmi irányelvek oldalát. Egyéni használhat is a "
+"BuddyPressben."
+
+#: admin/options-init.php:689
+msgid ""
+"Text for users to agree on privacy policy on BuddyPress Registration page."
+msgstr ""
+"Szöveg a felhasználók számára a BuddyPress regisztrációs oldal adatvédelmi "
+"szabályainak elfogadásáról."
+
+#: admin/options-init.php:690
+msgid "By registering an Account I have read and accept the privacy policy."
+msgstr ""
+"Fiók regisztrációval elolvastam és elfogadom az adatvédelmi irányelvet."
+
+#: admin/options-init.php:696
+msgid "Enable CF7"
+msgstr "CF7 engedélyezése "
+
+#: admin/options-init.php:697
+msgid "Make sure you add a checkbox to your forms to accept privacy policy."
+msgstr ""
+"Adatvédelmi irányelvek elfogadásához jelölőnégyzetet ad hozzá az űrlapokhoz."
+
+#: admin/options-init.php:703
+msgid "Enable Flamingo DB"
+msgstr "Flamingo DB engedélyezése"
+
+#: admin/options-init.php:704
+msgid "This will depending on the opt-in checkbox setting save data or not."
+msgstr ""
+"Ez attól függ, hogy az opt-in jelölőnégyzet beállítása mentett-e vagy sem."
+
+#: admin/options-init.php:710
+msgid "Opt-In Field name"
+msgstr "Opt-In mező neve"
+
+#: admin/options-init.php:711
+msgid "Enter the field name for the opt in checkbox here."
+msgstr "Add meg az opt-in mező nevét."
+
+#: admin/options-init.php:712
+msgid "opt-in"
+msgstr ""
+
+#: admin/options-init.php:718
+msgid "Delete Flamingo DB Records"
+msgstr "Flamingo DB rekordok törlése"
+
+#: admin/options-init.php:719
+msgid "On Forget Me Request, delete Flamingo DB records."
+msgstr "Felejtsd el kéréssel törlődnek a Flamingo rekordok."
+
+#: admin/options-init.php:726
+msgid "Enable Quform"
+msgstr "Quform engedélyezése"
+
+#: admin/options-init.php:727
+msgid ""
+"This will add Quform entries to data export. Checkbox needs to be added to "
+"each form manually."
+msgstr ""
+"Ez hozzáadja a Quform bejegyzéseket az adatok exportálásához. A "
+"jelölőnégyzetet minden egyes kézzel hozzá kell adni."
+
+#: admin/options-init.php:733
+msgid "Delete Quform Records"
+msgstr "Quform rekordok törlése"
+
+#: admin/options-init.php:734
+msgid "On Forget Me Request, delete Quform records."
+msgstr "Felejtsd el kéréssel törlődnek a Quform rekordok."
+
+#: admin/options-init.php:741
+msgid "Enable Formidable"
+msgstr "Formidable engedélyezése"
+
+#: admin/options-init.php:742
+msgid ""
+"This will add quform entries to data export. Checkbox needs to be added to "
+"each form manually."
+msgstr ""
+"Ez hozzáadja a Formidable bejegyzéseket az adatok exportálásához. A "
+"jelölőnégyzetet minden egyes kézzel hozzá kell adni."
+
+#: admin/options-init.php:748
+msgid "Delete Formidable Records"
+msgstr "Formidable rekordok törlése"
+
+#: admin/options-init.php:749
+msgid "On Forget Me Request, delete Formidable records."
+msgstr "Felejtsd el kéréssel törlődnek a Formidable rekordok."
+
+#: admin/options-init.php:756
+msgid "Enable GravityForms"
+msgstr "GravityForms engedélyezése"
+
+#: admin/options-init.php:757
+msgid ""
+"This will add Gravity Forms entries to data export. Checkbox needs to be "
+"added to each form manually."
+msgstr ""
+"Ez hozzáadja a Gravity Forms bejegyzéseket az adatok exportálásához. A "
+"jelölőnégyzetet minden egyes kézzel hozzá kell adni."
+
+#: admin/options-init.php:763
+msgid "Delete GravityForms Records"
+msgstr "GravityForms rekordok törlése"
+
+#: admin/options-init.php:764
+msgid "On Forget Me Request, delete Gravity Forms records."
+msgstr "Felejtsd el kéréssel törlődnek a Gravity Forms rekordok."
+
+#: admin/options-init.php:771
+msgid "Enable Mailster"
+msgstr "Mailster engedélyezése"
+
+#: admin/options-init.php:772
+msgid "Activate our Mailster Integration."
+msgstr "Aktiváld a Mailster integrációt."
+
+#: admin/options-init.php:778
+msgid "Enable Mailster Checkbox"
+msgstr "Mailster Checkbox engedélyezése"
+
+#: admin/options-init.php:779
+msgid "This will add checkbox to Mailster Subscribe form."
+msgstr "Ezzel hozzáadsz egy jelölőnégyzetet a Mailster Feliratkozási űrlaphoz."
+
+#: admin/options-init.php:786
+msgid "Mailster Privacy Policy Page"
+msgstr "Mailster adatvédelmi irányelvei"
+
+#: admin/options-init.php:787
+msgid ""
+"Assign your privacy policy page here. You could also use a custom one for "
+"Mailster"
+msgstr "Add meg az adatvédelmi irányelvek oldalt."
+
+#: admin/options-init.php:795
+msgid ""
+"Text for users to agree on privacy policy on Mailster Registration page."
+msgstr ""
+"Adatvédelmi irányelvek elfogadása szöveg a Mailster regisztrációs oldalán. "
+
+#: admin/options-init.php:796
+msgid ""
+"By subscribing to this newsletter I have read and accept the privacy policy."
+msgstr ""
+"A hírlevélre való feliratkozással elolvastam és elfogadom az adatvédelmi "
+"szabályzatot."
+
+#: admin/options-init.php:802
+msgid "Enable Google Analytics"
+msgstr "Google Analytics engedélyezése"
+
+#: admin/options-init.php:803
+msgid "Enable Analytics Loading only if allowed."
+msgstr ""
+"Analytics betöltése csak akkor történik meg ha a felhasználó erre engedélyt "
+"ad."
+
+#: admin/options-init.php:810
+msgid "Analytics Code"
+msgstr "Analytics kód"
+
+#: admin/options-init.php:825
+msgid "Enable Google Adwords"
+msgstr "Google Adwords engedélyezése"
+
+#: admin/options-init.php:826
+msgid "Enable Adwords Loading only if allowed."
+msgstr ""
+"Adwords kód betöltése csak akkor történik meg ha a felhasználó erre "
+"engedélyt ad."
+
+#: admin/options-init.php:833
+msgid "Adwords Code"
+msgstr "Adwords kód"
+
+#: admin/options-init.php:840
+msgid "Enable Google Tag Manager"
+msgstr "Google Tag Manager engedélyezése"
+
+#: admin/options-init.php:841
+msgid "Enable Tag Manager Loading only if allowed."
+msgstr "Google Tag Manager"
+
+#: admin/options-init.php:848
+msgid "Tag Manager Head Code"
+msgstr ""
+
+#: admin/options-init.php:856
+msgid "Tag Manager Body Code"
+msgstr ""
+
+#: admin/options-init.php:863
+msgid "Enable Hot Jar"
+msgstr "Hot Jar engedélyezése"
+
+#: admin/options-init.php:864
+msgid "Enable Hot Jar Loading only if allowed."
+msgstr ""
+"Hot Jar kód betöltése csak akkor történik meg ha a felhasználó erre "
+"engedélyt ad."
+
+#: admin/options-init.php:871
+msgid "Hot Jar Code"
+msgstr "Hot Jar kód"
+
+#: admin/options-init.php:878
+msgid "Enable Facebook"
+msgstr "Facebook engedélyezése"
+
+#: admin/options-init.php:879
+msgid "Enable Facebook Loading only if allowed."
+msgstr ""
+"Engedélyezzük a Facebook pixelcode betöltését a Cookiek elfogadás esetén."
+
+#: admin/options-init.php:886
+msgid "Facebook Code"
+msgstr "Facebook kód"
+
+#: admin/options-init.php:893
+msgid "Enable Piwik"
+msgstr "Piwik engedélyezése"
+
+#: admin/options-init.php:894
+msgid "Enable Piwik Loading only if allowed."
+msgstr "Engedélyezze a Piwik betöltését csak akkor, ha megengedett."
+
+#: admin/options-init.php:901
+msgid "Piwik Code"
+msgstr "Piwik kód"
+
+#: admin/options-init.php:908
+msgid "Enable Adsense"
+msgstr "Adsense engedélyezése"
+
+#: admin/options-init.php:909
+msgid "Enable Adsense Loading only if allowed."
+msgstr "Engedélyezze a Adsense betöltését csak akkor, ha megengedett."
+
+#: admin/options-init.php:916
+msgid "Adsense Code"
+msgstr "Adsense kód"
+
+#: admin/options-init.php:923
+msgid "Enable Custom"
+msgstr "Egyedi kód engedélyezése"
+
+#: admin/options-init.php:924
+msgid ""
+"Use this for custom JS Code to be executed if allowed. Use Loco Translate to "
+"adjust frontend text."
+msgstr ""
+"Használja ezt az egyéni JS-kód végrehajtásához, ha engedélyezte a "
+"felhasználó. Használja a Loco Translate-et a front-end szöveg módosításához."
+
+#: admin/options-init.php:931
+msgid "Custom Code"
+msgstr "Egyedi kód"
+
+#: admin/options-init.php:941 public/class-wordpress-gdpr-public.php:290
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+#: admin/options-init.php:948 admin/options-init.php:949
+msgid "Enable Privacy Policy"
+msgstr "Adatvédelmi irányelvek engedélyezése"
+
+#: admin/options-init.php:955
+msgid "Privacy Policy Page"
+msgstr "Adatvédelmi irányelvek oldal"
+
+#: admin/options-init.php:956
+msgid "Add your privacy policy to this page!"
+msgstr "Adatvédelmi irányelvek oldal"
+
+#: admin/options-init.php:972
+msgid "Privacy Policy Update"
+msgstr "Adatvédelmi irányelvek frissítése"
+
+#: admin/options-init.php:979
+msgid "Enable Privacy Policy Update"
+msgstr "Engedélyezzük az adatvédelmi irányelvek frissítését"
+
+#: admin/options-init.php:980
+msgid "Enable Privacy Policy Update form."
+msgstr "Adatvédelmi irányelvek frissítés formja."
+
+#: admin/options-init.php:986
+msgid "Privacy Policy Update from Email"
+msgstr "Adatvédelmi irányelvek frissítése e-mailben"
+
+#: admin/options-init.php:987
+msgid "The FROM Email used for Privacy Policy Updates."
+msgstr "Az Adatkezelési frissítésekhez használt e-mail cím."
+
+#: admin/options-init.php:994
+msgid "Privacy Policy Update Email Subject"
+msgstr "Az Adatkezelési frissítések email tárgya"
+
+#: admin/options-init.php:996
+msgid "GDPR - Privacy Policy Updated"
+msgstr "GDPR - Adatvédelmi irányelvek frissítve"
+
+#: admin/options-init.php:1002
+msgid "Privacy Policy Update Email Text"
+msgstr "Adatvédelmi szabályzat E-mail szöveg frissítése"
+
+#: admin/options-init.php:1003
+msgid "Text of the Email regarding a Privacy Policy Update."
+msgstr ""
+"Az e-mail szövege az adatvédelmi irányelvek frissítésével kapcsolatban."
+
+#: admin/options-init.php:1004
+#, php-format
+msgid ""
+"Dear %s,\n"
+"                                <br>\n"
+"                                We have updated our privacy policy. Please "
+"read more here: INSERT YOUR LINK."
+msgstr ""
+"Kedves %s,\n"
+"                                <br>\n"
+"                                Frissítettük az adatvédelmi irányelveinket. "
+"Kérjük, olvasd el: OLDAL LINKJE."
+
+#: admin/options-init.php:1013
+msgid "Send Privacy Update Email"
+msgstr "Emailek kiküldése a adatvédelmi irányelvek frissítéséről"
+
+#: admin/options-init.php:1028 admin/options-init.php:1029
+msgid "Enable Privacy Settings"
+msgstr "Az adatvédelmi beállítások engedélyezése"
+
+#: admin/options-init.php:1035
+msgid "privacy Settings Page"
+msgstr "Adatvédelmi beállítások oldal"
+
+#: admin/options-init.php:1036
+msgid "Shortcode: [wordpress_gdpr_privacy_settings]"
+msgstr ""
+
+#: admin/options-init.php:1044 admin/options-init.php:1051
+msgid "Pseudonymization"
+msgstr "Titkosítás"
+
+#: admin/options-init.php:1052
+msgid ""
+"Pseudonymization is not mandatory by GDPR. It might be a good improvement, "
+"but also can risk in data loss. <a href=\"https://plugins.db-dzine."
+"com/wordpress-gdpr/documentation/faq/pseudonymization/\" target=\"_blank\">"
+"Please read more here</a>."
+msgstr ""
+"Titkosítás jelenleg nem kötelező a GDPR rendelete szerint. Biztonság "
+"szempontjából jó döntés, de legyél körültekintő, mert adatvesztéssel járhat!!"
+"<a href=\"https://plugins.db-dzine.com/wordpress-"
+"gdpr/documentation/faq/pseudonymization/\" target=\"_blank\">Részletek "
+"itt</a>."
+
+#: admin/options-init.php:1059
+msgid "Request Data Archive"
+msgstr "Adatarchívum kérése"
+
+#: admin/options-init.php:1066
+msgid "Enable Request Data"
+msgstr "Adat lekérés engedélyezése"
+
+#: admin/options-init.php:1067
+msgid "Enable Request Data form."
+msgstr "Adatlekérő form engedélyezése"
+
+#: admin/options-init.php:1073
+msgid "Request Data Archive Page"
+msgstr "Adatlekérő oldal"
+
+#: admin/options-init.php:1074
+msgid "Shortcode: [wordpress_gdpr_request_data]"
+msgstr ""
+
+#: admin/options-init.php:1081
+msgid "Show Export Data Button for Logged in"
+msgstr ""
+"Adatok exportálása gomb megjelenítése a bejelentkezett felhasználók számára."
+
+#: admin/options-init.php:1082
+msgid ""
+"This will show logged in users a button where they can export data "
+"theirselves."
+msgstr ""
+"Ezzel a gombbal a bejelentkezett felhasználók saját maguk tudják exportálni "
+"a saját adataikat a weboldalról."
+
+#: admin/options-init.php:1089
+msgid "Export Data as HTML Table"
+msgstr "Adatok exportálása HTML táblába"
+
+#: admin/options-init.php:1090
+msgid "Instead of JSON data will be exported as html table."
+msgstr "A JSON adatok helyett html táblák exportálhatók."
+
+#: admin/options-init.php:1107
+msgid "Request Data Export Email Subject"
+msgstr "Az adatok exportálása e-mail tárgya"
+
+#: admin/options-init.php:1108
+msgid "Subject of the Email notification."
+msgstr "Értesítő email tárgya"
+
+#: admin/options-init.php:1109
+msgid "GDPR - Your User Data is Ready"
+msgstr "GDPR - A felhasználói adatok készen állnak"
+
+#: admin/options-init.php:1115
+msgid "Request Data Export Email Text"
+msgstr "Az adatok exportálása e-mail szövege"
+
+#: admin/options-init.php:1116
+msgid "Text of the Email data export."
+msgstr "A kiküldött email szövege"
+
+#: admin/options-init.php:1117
+#, php-format
+msgid "Dear %s, <br><br>attached you find an export of your user data."
+msgstr ""
+"Kedves %s, <br><br>\n"
+"Mellékletben megtalálod az exportált adataidat."
+
+#: admin/options-init.php:1124 public/class-wordpress-gdpr-public.php:318
+msgid "Terms & Conditions"
+msgstr "Jogi nyilatkozat"
+
+#: admin/options-init.php:1131
+msgid "Enable Terms & Conditions"
+msgstr "Jogi nyilatkozat engedélyezése"
+
+#: admin/options-init.php:1132
+msgid "Enable Terms & Conditions form."
+msgstr "Jogi nyilatkozat form engedélyezése"
+
+#: admin/options-init.php:1138
+msgid "Terms & Conditions Page"
+msgstr "Jogi nyilatkozat oldal"
+
+#: admin/options-init.php:1147 public/class-wordpress-gdpr-public.php:341
+msgid "Unsubscribe"
+msgstr "Leiratkozások kezelése"
+
+#: admin/options-init.php:1154 admin/options-init.php:1155
+msgid "Enable Unsubscribe"
+msgstr "Leiratkozás engedélyezése"
+
+#: admin/options-init.php:1161
+msgid "Unsubscribe Page"
+msgstr "Leiratkozás oldal"
+
+#: admin/options-init.php:1162
+msgid ""
+"Add your unsubscribe Form here! For <a target=\"_blank\" href=\"https://kb."
+"mailchimp.com/lists/signup-forms/find-the-unsubscribe-link-for-your-list\">"
+"Mailchimp see here how to setup a Mailchimp Unsuscribe form</a>. This can be "
+"embedded via iFrame."
+msgstr ""
+"Add meg a leiratkozási űrlapodat itt! <a target=\"_blank\" href=\"https://kb."
+"mailchimp.com/lists/signup-forms/find-the-unsubscribe-link-for-your-list\">"
+"itt olvashatsz egy Mailchimp Unsubscribe űrlap beállításáról</a>. Ez "
+"beágyazható iFrame-en keresztül."
+
+#: admin/options-init.php:1170
+msgid "Expert"
+msgstr "Szakértő mód"
+
+#: admin/options-init.php:1171
+msgid "Expert Settings."
+msgstr "Szakértői beállítások"
+
+#: admin/options-init.php:1178
+msgid "Use Cookie Whitelist"
+msgstr "Használja a Cookie engedélyező listát"
+
+#: admin/options-init.php:1179
+msgid ""
+"Enabled this will remove all cookies that are not on the whitelist for "
+"services. You should enable allow cookies for logged in users too. Only use "
+"this when you are sure what you do!"
+msgstr ""
+"Minden Cookie eltávolítása ami nem szerepel az engedélyezési listán. Ezt "
+"csak akkor használd, ha tudod mit csinálsz!"
+
+#: admin/options-init.php:1186
+msgid "Custom CSS"
+msgstr "Egyedi css"
+
+#: admin/options-init.php:1187
+msgid "Add some stylesheet if you want."
+msgstr "Saját css hozzáadása."
+
+#: admin/class-wordpress-gdpr-data-export.php:82
+#: admin/class-wordpress-gdpr-data-delete.php:65
+msgid "No User ID set."
+msgstr "Nincs User ID beállítva."
+
+#: admin/class-wordpress-gdpr-data-export.php:98
+msgid "Data Exported Manually"
+msgstr "Adatok kézzel exportálva"
+
+#: admin/class-wordpress-gdpr-data-export.php:168
+msgid "Export Data successfully mailed to user"
+msgstr "Az adatok exportálása sikeresen elküldve a felhasználónak"
+
+#: admin/class-wordpress-gdpr-data-export.php:170
+msgid "Data Sent"
+msgstr "Adat elküldve"
+
+#: admin/class-wordpress-gdpr-data-export.php:173
+msgid "Export Data could not be mailed to user"
+msgstr "Az exportálási adatokat nem lehet elküldeni a felhasználónak"
+
+#: admin/class-wordpress-gdpr-data-delete.php:162
+msgid "User Data Not Deleted"
+msgstr "A felhasználói adatokat nem törölték"
+
+#: admin/class-wordpress-gdpr-data-delete.php:192
+msgid "Data Deleted"
+msgstr "Adatok törölve"
+
+#: admin/class-wordpress-gdpr-data-delete.php:194
+msgid "User Data Notification sent"
+msgstr "Értesítés elküldve"
+
+#: admin/class-wordpress-gdpr-data-delete.php:196
+msgid "User Data Notification not sent"
+msgstr "Értesítés nincs elküldve"
+
+#: admin/class-wordpress-gdpr-requests.php:71
+msgid "GDPR Request"
+msgstr "GDPR kérelem"
+
+#: admin/class-wordpress-gdpr-requests.php:72
+msgid "GDPR Requests"
+msgstr "GDPR kérelmek"
+
+#: admin/class-wordpress-gdpr-requests.php:76
+#, php-format
+msgid "All %s"
+msgstr "Összes %s"
+
+#: admin/class-wordpress-gdpr-requests.php:78
+#: admin/class-wordpress-gdpr-requests.php:81
+#, php-format
+msgid "New %s"
+msgstr "Új %s"
+
+#: admin/class-wordpress-gdpr-requests.php:79
+#, php-format
+msgid "Add New %s"
+msgstr "Új hozzáadása %s"
+
+#: admin/class-wordpress-gdpr-requests.php:80
+#, php-format
+msgid "Edit %s"
+msgstr "Szerkesztés %s"
+
+#: admin/class-wordpress-gdpr-requests.php:82
+#, php-format
+msgid "View %s"
+msgstr "Megntekintés %s"
+
+#: admin/class-wordpress-gdpr-requests.php:83
+#, php-format
+msgid "Search %s"
+msgstr "Keresés %s"
+
+#: admin/class-wordpress-gdpr-requests.php:84
+#, php-format
+msgid "No %s found"
+msgstr "Nem található %s"
+
+#: admin/class-wordpress-gdpr-requests.php:85
+#, php-format
+msgid "No %s found in trash"
+msgstr "Kukában nem található %s"
+
+#: admin/class-wordpress-gdpr-requests.php:124
+msgid "User"
+msgstr "Felhasználó"
+
+#: admin/class-wordpress-gdpr-requests.php:125
+msgid "Email confirmed"
+msgstr "E-mail megerősítve"
+
+#: admin/class-wordpress-gdpr-requests.php:126
+msgid "Status"
+msgstr "Státusz"
+
+#: admin/class-wordpress-gdpr-requests.php:127
+msgid "User Identifier"
+msgstr "Felhasználói azonosító"
+
+#: admin/class-wordpress-gdpr-requests.php:128
+msgid "Actions"
+msgstr "Művelet(ek)"
+
+#: admin/class-wordpress-gdpr-requests.php:188
+#: admin/class-wordpress-gdpr-users.php:130
+msgid "Delete Data"
+msgstr "Adat törlése"
+
+#: admin/class-wordpress-gdpr-requests.php:197
+#: admin/class-wordpress-gdpr-users.php:135
+msgid "Export Data"
+msgstr "Adat exportálás"
+
+#: admin/class-wordpress-gdpr-requests.php:206
+#: admin/class-wordpress-gdpr-users.php:140
+msgid "Send Data"
+msgstr "Adatok küldése"
+
+#: admin/class-wordpress-gdpr-requests.php:213
+msgid "Manually Done"
+msgstr "Kézi készítés"
+
+#: admin/class-wordpress-gdpr-requests.php:260
+msgid "Firstname"
+msgstr "Keresztnév"
+
+#: admin/class-wordpress-gdpr-requests.php:265
+msgid "Last name"
+msgstr "Vezetéknév"
+
+#: admin/class-wordpress-gdpr-requests.php:270
+msgid "Email"
+msgstr ""
+
+#: admin/class-wordpress-gdpr-requests.php:338
+msgid "Done"
+msgstr "Kész"
+
+#: admin/class-wordpress-gdpr-requests.php:340
+msgid "Post id not found"
+msgstr "Bejegyzés ID nem található"
+
+#: admin/class-wordpress-gdpr-users.php:114
+msgid "No users found"
+msgstr "Nem található felhasználó"
+
+#: includes/class-wordpress-gdpr-activator.php:183
+msgid "GDPR Agent"
+msgstr "GDPR képviselő"
+
+#: includes/class-wordpress-gdpr-activator.php:205
+msgid "GDPR Reporter"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:189
+msgid "Learn More"
+msgstr "Tudj meg többet"
+
+#: public/class-wordpress-gdpr-public.php:206
+msgid "Contact our Data Protection Officer."
+msgstr "Lépj kapcsolatba az adatvédelmi tisztviselővel."
+
+#: public/class-wordpress-gdpr-public.php:220
+msgid "Read more about our Cookie Policy."
+msgstr "További információ a cookie-kezelésről."
+
+#: public/class-wordpress-gdpr-public.php:234
+msgid "Learn more about our liabilities."
+msgstr "Tudjon meg többet kötelezettségeinkről."
+
+#: public/class-wordpress-gdpr-public.php:249
+msgid "Submit a request to erase your private data."
+msgstr "Küldje el a privát adatok törlésére vonatkozó kérelmet."
+
+#: public/class-wordpress-gdpr-public.php:263
+msgid "Learn about our ownership and authorship."
+msgstr "Az oldal üzemeltetőjének és tulajdonosának adatai."
+
+#: public/class-wordpress-gdpr-public.php:276
+msgid "Request Data"
+msgstr "Adat kérés"
+
+#: public/class-wordpress-gdpr-public.php:277
+msgid "Submit a request to get a copy of all your data stored."
+msgstr "Kérelem küldése a tárolt adatok lekéréséhez."
+
+#: public/class-wordpress-gdpr-public.php:291
+msgid "Read about our Privacy Policy here."
+msgstr "Elolvashatod az adatkezelési szabályzatot."
+
+#: public/class-wordpress-gdpr-public.php:305
+msgid "Configure your personal privacy settings here."
+msgstr "Itt tilthatod vagy engedélyezheted a különböző cookiekat."
+
+#: public/class-wordpress-gdpr-public.php:319
+msgid "Read more about the Terms & Conditions of our website."
+msgstr "Elolvashatod a jogi nyilatkozatot."
+
+#: public/class-wordpress-gdpr-public.php:342
+msgid "Unsubscribe from our Newsletters."
+msgstr "Leiratkozás hírlevelünkkről."
+
+#: public/class-wordpress-gdpr-public.php:378
+msgid "GDPR Request - "
+msgstr "GDPR kérelem -"
+
+#: public/class-wordpress-gdpr-public.php:378
+msgid "A new GDPR Request is available."
+msgstr "Új GDPR kérelem érhető el."
+
+#: public/class-wordpress-gdpr-public.php:381
+msgid "Email Address confirmed and your request is in process now."
+msgstr "Az e-mail cím megerősítve, és kérése folyamatban van."
+
+#: public/class-wordpress-gdpr-public.php:385
+msgid "Email Address could not be confirmed. Please send individual request."
+msgstr ""
+"Az e-mail címet nem lehetett megerősíteni. Kérjük, küldjön egyedi kérelmet."
+
+#: public/class-wordpress-gdpr-public.php:445
+msgid "Cookies"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:446
+msgid "We use Cookies to give you a better website experience."
+msgstr "A Cookie-kat használjuk, hogy jobb internetes élményt nyújtsunk."
+
+#: public/class-wordpress-gdpr-public.php:451
+msgid "Cloudflare"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:452
+msgid ""
+"For perfomance reasons we use Cloudflare as a CDN network. This saves a "
+"cookie \"__cfduid\" to apply security settings on a per-client basis. This "
+"cookie is strictly necessary for Cloudflare's security features and cannot "
+"be turned off."
+msgstr ""
+"Fejlesztési okokból a Cloudflare-t CDN hálózatát használjuk. Ezzel a "
+"\"__cfduid\" cookie-t a biztonsági beállítások ügyfél-alapon történő "
+"alkalmazásával mentheti. Ez a cookie szigorúan szükséges a Cloudflare "
+"biztonsági funkcióihoz, és nem kapcsolható ki."
+
+#: public/class-wordpress-gdpr-public.php:458
+msgid "WooCommerce"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:459
+msgid ""
+"We use WooCommerce as a shopping system. For cart and order processing 2 "
+"cookies will be stored: woocommerce_cart_hash & woocommerce_items_in_cart. "
+"This cookies are strictly necessary and can not be turned off."
+msgstr ""
+"WooCommerce rendszert használunk. A kosár és megrendelés feldolgozásához 2 "
+"cookie-t szükséges: woocommerce_cart_hash & woocommerce_items_in_cart. Ez a "
+"2 cookie szükséges az oldal megfelelő működéséhez és nem kapcsolható ki."
+
+#: public/class-wordpress-gdpr-public.php:465
+msgid "Google Analytics"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:466
+msgid "We track anonymized user information to improve our website."
+msgstr ""
+"A weboldalunk fejlesztése érdekében nyomon követjük az anonimizált "
+"felhasználói adatokat."
+
+#: public/class-wordpress-gdpr-public.php:472
+msgid "Google Adwords"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:473
+msgid "We use Adwords to track our Conversions through Google Clicks."
+msgstr ""
+"Az Adwords segítségével nyomon követhetjük konverzióinkat a Google "
+"kattintások segítségével."
+
+#: public/class-wordpress-gdpr-public.php:479
+msgid "Google Tag Manager"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:480
+msgid ""
+"We use Google Tag Manager to monitor our traffic and to help us AB test new "
+"features    "
+msgstr ""
+"Google Tag Manager segítségével nyomon követjük forgalmunkat, és segítünk "
+"nekünk az AB új funkcióinak tesztelésében."
+
+#: public/class-wordpress-gdpr-public.php:486
+msgid "Hot Jar"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:487
+msgid ""
+"We use HotJar to track what users click on and engage with on this site "
+msgstr ""
+"A HotJar segítségével nyomon követhetjük, hogy a felhasználók milyen "
+"kattintással és kapcsolódással rendelkeznek ezen a webhelyen."
+
+#: public/class-wordpress-gdpr-public.php:493
+msgid "Facebook"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:494
+msgid "We use Facebook to track connections to social media channels."
+msgstr ""
+"A Facebook segítségével nyomon követjük a kapcsolatokat a közösségi médiával."
+
+#: public/class-wordpress-gdpr-public.php:500
+msgid "Piwik"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:501
+msgid "We use Piwik to track user information to improve our website."
+msgstr ""
+"A Piwik segítségével nyomon követjük a felhasználói információkat, hogy "
+"javítsuk weboldalunkat."
+
+#: public/class-wordpress-gdpr-public.php:508
+msgid "AdSense"
+msgstr ""
+
+#: public/class-wordpress-gdpr-public.php:509
+msgid "We use Google AdSense to show online advertisements on our website."
+msgstr ""
+"A Google AdSense használatával online hirdetéseket jelenítünk meg "
+"honlapunkon."
+
+#: public/class-wordpress-gdpr-public.php:516
+msgid "Custom"
+msgstr "Egyedi"
+
+#: public/class-wordpress-gdpr-public.php:517
+msgid "Use Loco Translate to change Text for custom Code"
+msgstr "Használja a Loco translate-et az egyéni kód szöveg módosításához."
+
+#: public/class-wordpress-gdpr-public.php:527
+#: public/class-wordpress-gdpr-forms.php:87
+msgid "Return to Privacy Center"
+msgstr "Vissza az adatvédelmi központba"
+
+#: public/class-wordpress-gdpr-public.php:534
+msgid "Name"
+msgstr "Cookie neve"
+
+#: public/class-wordpress-gdpr-public.php:535
+msgid "Reason"
+msgstr "Feladata"
+
+#: public/class-wordpress-gdpr-public.php:536
+msgid "Enabled"
+msgstr "Engedélyez"
+
+#: public/class-wordpress-gdpr-forms.php:49
+msgid "Forget Me Request"
+msgstr "Felejtsd el kérelem"
+
+#: public/class-wordpress-gdpr-forms.php:57
+msgid "DPO Contact Request"
+msgstr "DPO kapcsolat kérelem"
+
+#: public/class-wordpress-gdpr-forms.php:65
+msgid "Data Request"
+msgstr "Adat kérés"
+
+#: public/class-wordpress-gdpr-forms.php:97
+msgid "Request sent successfully. Our DPO will answer you soon."
+msgstr ""
+"Kérés sikeresen elküldve. Az adatvédelmi tisztségviselő hamarosan válaszol."
+
+#: public/class-wordpress-gdpr-forms.php:99
+msgid ""
+"Request received. We have sent you a confirmation email to validate your "
+"email address for this type of request."
+msgstr ""
+"Megérkezett kérés. Elküldtünk egy visszaigazoló e-mailt, amely megerősíti e-"
+"mail címét."
+
+#: public/class-wordpress-gdpr-forms.php:105
+msgid "Could not send your request!"
+msgstr "Nem lehet elküldeni a kérelmet!"
+
+#: public/class-wordpress-gdpr-forms.php:175
+msgid "First Name missing."
+msgstr "Keresztnév hiányzik."
+
+#: public/class-wordpress-gdpr-forms.php:179
+msgid "Last Name missing."
+msgstr "Vezetéknév hiányzik."
+
+#: public/class-wordpress-gdpr-forms.php:183
+msgid "Email missing."
+msgstr "Email cím hiányzik."
+
+#: public/class-wordpress-gdpr-forms.php:187
+msgid "Terms not accepted."
+msgstr "Jogi nyilatkozat nincs elfogadva."
+
+#: public/class-wordpress-gdpr-forms.php:192
+msgid "Message missing."
+msgstr "Üzenet hiányzik."
+
+#: public/class-wordpress-gdpr-forms.php:200
+msgid "Could not find a user with this email. Please contact our DPO directly."
+msgstr ""
+"Nem található felhasználó ezzel az email címmel. Fordulj az adatvédelmi "
+"tisztségviselőhöz."
+
+#: public/class-wordpress-gdpr-forms.php:240
+msgid "Could not create your GDPR request."
+msgstr "Nem sikerült létrehozni a GDPR kérését."
+
+#: public/class-wordpress-gdpr-forms.php:257
+#, php-format
+msgid "First Name: %s"
+msgstr "Keresztnév: %s"
+
+#: public/class-wordpress-gdpr-forms.php:258
+#, php-format
+msgid "Last Name: %s"
+msgstr "Vezetéknév: %s"
+
+#: public/class-wordpress-gdpr-forms.php:259
+#, php-format
+msgid "Email: %s"
+msgstr "Email cím: %s"
+
+#: public/class-wordpress-gdpr-forms.php:260
+#, php-format
+msgid "Terms Accepted: %s"
+msgstr "Elfogadott feltételek:% s"
+
+#: public/class-wordpress-gdpr-forms.php:263
+#, php-format
+msgid "Message: %s"
+msgstr "Üzenet:% s"
+
+#: public/class-wordpress-gdpr-forms.php:275
+msgid "Confirm Request"
+msgstr "Kérés megerősítése"
+
+#: public/class-wordpress-gdpr-forms.php:335
+msgid "Your First Name (*)"
+msgstr "Vezetéknév (*)"
+
+#: public/class-wordpress-gdpr-forms.php:351
+msgid "Your Last Name (*)"
+msgstr "Keresztnév (*)"
+
+#: public/class-wordpress-gdpr-forms.php:367
+msgid "Your Email (*)"
+msgstr "Email cím (*)"
+
+#: public/class-wordpress-gdpr-forms.php:383
+msgid "Your message (*)"
+msgstr "Üzenet (*)"
+
+#: public/class-wordpress-gdpr-forms.php:403
+msgid ""
+"I agree to the privacy policy and that my data will be stored for this GDPR "
+"request ."
+msgstr ""
+"Elfogadom az adatvédelmi irányelvet, és hozzájárulok az adataim tárolásához "
+"a GDPR szabályai szerint."
+
+#: public/class-wordpress-gdpr-forms.php:418
+msgid "Submit"
+msgstr "Küldés"
+
+#: public/class-wordpress-gdpr-forms.php:428
+msgid "Delete my Data"
+msgstr "Adataim törlése"
+
+#: public/class-wordpress-gdpr-forms.php:430
+msgid "Export my Data"
+msgstr "Adatok exportálása"
+
+#: public/class-wordpress-gdpr-integrations.php:137
+msgid "You must accept our Privacy Policy."
+msgstr "El kell fogadnia adatvédelmi szabályzatot."
+
+#. Description of the plugin
+msgid "EU-DSVGO, GDPR Compliance Plugin"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://plugins.db-dzine.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "DB-Dzine"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.db-dzine.de"
+msgstr ""

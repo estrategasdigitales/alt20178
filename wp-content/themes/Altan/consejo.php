@@ -8,6 +8,7 @@ get_header();
 
 <?php
 $consejo = get_field('consejo_admin');
+$idioma= ICL_LANGUAGE_CODE;
 
 // echo '<pre style="font-size:10px">';
 // print_r($consejo);
@@ -83,13 +84,14 @@ $consejo = get_field('consejo_admin');
 				
 				<p>
 					<b>
-						<a href="" onclick="goBack()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+						<a href="javascript:history.back()" ><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
 							<?php
-								if (isset($_GET["lang"])){
-									if ( $_GET["lang"] == "en") {
-									 	echo "Back";
-									 } 				
-								}else{
+								if ($idioma == "en")
+								{
+									echo "Back";									  			
+								}
+								else
+								{
 									echo "Regresar";
 								}
 							 ?>
@@ -98,11 +100,12 @@ $consejo = get_field('consejo_admin');
 					</b>
 				</p>
 				<?php
-					if (isset($_GET["lang"])){
-						if ( $_GET["lang"] == "en") {
-						 	echo "<h1>Our board</h1>";
-						 } 				
-					}else{
+					if ($idioma == "en")
+					{
+					 	echo "<h1>Our board</h1>";						 
+					}
+					else
+					{
 						echo "<h1>Consejo de Administración</h1>";
 					}
 				 ?>

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-
+<?php
+$idioma= ICL_LANGUAGE_CODE;
+?>
 <style type="text/css">
 body {
 	background-color: #efefef;
@@ -12,7 +14,15 @@ body {
 			<?php echo do_shortcode('[addtoany]'); ?>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 contenido-single" style="background-color:#ffffff">
-			<p class="regresar"><a href="<?php echo get_site_url(); ?>/category/sala-de-prensa/boletines/">REGRESAR A BOLETINES</a></p>
+			<?php
+				if ( $idioma == "en") {
+				 	echo '<p class="regresar"><a href="<?php echo get_site_url(); ?>/en/category/press/newsletters/">RETURN TO NEWSLETTERS</a></p>';
+				 } 				
+				else{
+					echo '<p class="regresar"><a href="<?php echo get_site_url(); ?>/category/sala-de-prensa/boletines/">REGRESAR A BOLETINES</a></p>';
+				}
+		 		?>
+			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'entry' ); ?>
 			<?php if ( ! post_password_required() ) comments_template( '', true ); ?>

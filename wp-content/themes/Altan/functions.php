@@ -18,6 +18,7 @@ array(
 	)
 );
 }
+
 add_action( 'wp_enqueue_scripts', 'altan_load_scripts' );
 function altan_load_scripts()
 {
@@ -54,6 +55,11 @@ register_sidebar( array (
 ) );
 }
 // 
+function shortcode_drop_cd_pm( $atts ){
+  include 'drop_cd_pm.php';
+}
+add_shortcode( 'drop_cd_pm', 'shortcode_drop_cd_pm' );
+
 function shortcode_cubo( $atts ){
   include 'cubo.php';
 }

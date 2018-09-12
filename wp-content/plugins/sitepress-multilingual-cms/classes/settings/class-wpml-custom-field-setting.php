@@ -31,9 +31,22 @@ abstract class WPML_Custom_Field_Setting extends WPML_TM_User {
 	/**
 	 * @return bool
 	 */
+	public function is_unlocked() {
+
+		return isset( $this->tm_instance->settings[ $this->get_unlocked_setting_index() ][ $this->index ] ) &&
+		     (bool) $this->tm_instance->settings[ $this->get_unlocked_setting_index() ][ $this->index ];
+	}
+
+	/**
+	 * @return bool
+	 */
 	public function excluded() {
 
-		return in_array( $this->index, $this->get_excluded_keys() ) || ( $this->is_read_only() && $this->status() === WPML_IGNORE_CUSTOM_FIELD );
+		return in_array( $this->index, $this->get_excluded_keys() ) ||
+		       ( $this->is_read_only() &&
+		         $this->status() === WPML_IGNORE_CUSTOM_FIELD &&
+		         ! $this->is_unlocked()
+		       );
 	}
 
 	public function status() {
@@ -53,6 +66,10 @@ abstract class WPML_Custom_Field_Setting extends WPML_TM_User {
 
 	public function set_to_copy() {
 		$this->set_state( WPML_COPY_CUSTOM_FIELD );
+	}
+
+	public function set_to_copy_once() {
+		$this->set_state( WPML_COPY_ONCE_CUSTOM_FIELD );
 	}
 
 	public function set_to_translatable() {
@@ -87,7 +104,43 @@ abstract class WPML_Custom_Field_Setting extends WPML_TM_User {
 
 	public function get_editor_group() {
 		$setting = $this->get_editor_group_array_setting_index();
+
 		return isset( $this->tm_instance->settings[ $setting ][ $this->index ] ) ? $this->tm_instance->settings[ $setting ][ $this->index ] : '';
+	}
+
+	public function set_translate_link_target( $state, $sub_fields ) {
+		if ( isset( $sub_fields[ 'value' ] ) ) {
+			// it's a single sub field
+			$sub_fields = array( $sub_fields );
+		}
+		$this->tm_instance->settings[ $this->get_translate_link_target_array_setting_index() ][ $this->index ] = array( 'state' => $state, 'sub_fields' => $sub_fields );
+	}
+	
+	public function is_translate_link_target() {
+		$array_index = $this->get_translate_link_target_array_setting_index();
+		return isset( $this->tm_instance->settings[ $array_index ][ $this->index ] ) ?
+					( $this->tm_instance->settings[ $array_index ][ $this->index ][ 'state' ] ||
+					  $this->get_translate_link_target_sub_fields() ) :
+					false;
+
+	}
+
+	public function get_translate_link_target_sub_fields() {
+		$array_index = $this->get_translate_link_target_array_setting_index();
+		return isset( $this->tm_instance->settings[ $array_index ][ $this->index ][ 'sub_fields' ] ) ?
+					$this->tm_instance->settings[ $array_index ][ $this->index ][ 'sub_fields' ] :
+					array();
+	}
+
+	public function set_convert_to_sticky( $state ) {
+		$this->tm_instance->settings[ $this->get_convert_to_sticky_array_setting_index() ][ $this->index ] = $state;
+	}
+
+	public function is_convert_to_sticky() {
+		$array_index = $this->get_convert_to_sticky_array_setting_index();
+		return isset( $this->tm_instance->settings[ $array_index ][ $this->index ] ) ?
+					$this->tm_instance->settings[ $array_index ][ $this->index ] :
+					false;
 	}
 
 	private function set_state( $state ) {
@@ -107,7 +160,18 @@ abstract class WPML_Custom_Field_Setting extends WPML_TM_User {
 	protected abstract function get_editor_style_array_setting_index();
 	protected abstract function get_editor_label_array_setting_index();
 	protected abstract function get_editor_group_array_setting_index();
+	protected abstract function get_unlocked_setting_index();
 	
+	/**
+	 * @return string
+	 */
+	protected abstract function get_translate_link_target_array_setting_index();
+
+	/**
+	 * @return string
+	 */
+	protected abstract function get_convert_to_sticky_array_setting_index();
+
 	/**
 	 * @return  string[]
 	 */

@@ -1,4 +1,9 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
+/** Enable W3 Total Cache */
+
 
 require __DIR__ . '/vendor/vlucas/phpdotenv/src/Dotenv.php';
 require __DIR__ . '/vendor/vlucas/phpdotenv/src/Loader.php';
@@ -85,13 +90,13 @@ $table_prefix  = getenv('DB_WP_PREFIX');
  * Se recomienda encarecidamente a los desarrolladores de temas y plugins que usen WP_DEBUG
  * en sus entornos de desarrollo.
  */
-define('WP_DEBUG', getenv( 'APP_DEBUG' ));
+define('WP_DEBUG', filter_var(getenv( 'APP_DEBUG' ), FILTER_VALIDATE_BOOLEAN) );
 define('WP_HOME', 'https://' . getenv( 'HOST_NAME'));
 define('WP_SITEURL', 'https://' . getenv( 'HOST_NAME'));
 define('WP_CONTENT_URL', '/wp-content');
 define('DOMAIN_CURRENT_SITE', getenv( 'HOST_NAME' ));
 define('RELOCATE', true);
-define('WP_MEMORY_LIMIT', '1024M');
+define('WP_MEMORY_LIMIT', '256M');
 define('FS_METHOD', 'direct');
 
 /* ¡Eso es todo, deja de editar! Feliz blogging */

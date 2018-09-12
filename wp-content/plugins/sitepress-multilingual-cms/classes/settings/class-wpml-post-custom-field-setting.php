@@ -43,6 +43,31 @@ class WPML_Post_Custom_Field_Setting extends WPML_Custom_Field_Setting {
 	}
 
 	/**
+	 * @return string
+	 */
+	protected function get_translate_link_target_array_setting_index() {
+		
+		return 'custom_fields_translate_link_target';
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function get_convert_to_sticky_array_setting_index() {
+		
+		return 'custom_fields_convert_to_sticky';
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function get_unlocked_setting_index() {
+		return defined( 'WPML_POST_META_UNLOCKED_SETTING_INDEX' )
+			? WPML_POST_META_UNLOCKED_SETTING_INDEX
+			: 'custom_fields_unlocked_config';
+	}
+
+	/**
 	 * @return  string[]
 	 */
 	protected function get_excluded_keys() {

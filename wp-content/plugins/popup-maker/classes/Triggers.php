@@ -146,7 +146,7 @@ class PUM_Triggers {
 							'label'       => __( 'Extra CSS Selectors', 'popup-maker' ),
 							'desc'        => __( 'For more than one selector, separate by comma (,)', 'popup-maker' ) . '<br /><strong>eg:  </strong>' . __( ' .class-here, .class-2-here, #button_id', 'popup-maker' ),
 							'placeholder' => __( '.class-here', 'popup-maker' ),
-							'doclink'     => 'http://docs.wppopupmaker.com/article/147-getting-css-selectors?utm_source=plugin-popup-editor=&utm_medium=inline-doclink&utm_campaign=ContextualHelp&utm_content=extra-selectors',
+							'doclink'     => 'https://docs.wppopupmaker.com/article/147-getting-css-selectors?utm_source=plugin-popup-editor=&utm_medium=inline-doclink&utm_campaign=ContextualHelp&utm_content=extra-selectors',
 						),
 					),
 					'advanced' => array(
@@ -179,6 +179,13 @@ class PUM_Triggers {
 			),
 
 		) );
+
+		foreach ( $triggers as $key => $trigger ) {
+			$triggers[ $key ]['fields'] = PUM_Admin_Helpers::parse_tab_fields( $triggers[ $key ]['fields'], array(
+				'has_subtabs' => false,
+				'name'        => '%s',
+			) );
+		}
 
 		// @deprecated filter.
 		$old_triggers = apply_filters( 'pum_get_triggers', array() );
@@ -256,6 +263,7 @@ class PUM_Triggers {
 			'desc'     => __( 'Choose which cookies will disable this trigger?', 'popup-maker' ),
 			'type'     => 'select',
 			'multiple' => true,
+			'as_array' => true,
 			'select2'  => true,
 			'priority' => 99,
 			'options'  => array(

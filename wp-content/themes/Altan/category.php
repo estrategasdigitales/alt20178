@@ -66,10 +66,13 @@
 				
 					<?php $current_cat = get_category($cat); 
 					
+							$idioma= ICL_LANGUAGE_CODE;
+							
+
 					if ($current_cat->slug == 'dispositivos' || $current_cat->slug == 'devices') {
 
-						if (isset($_GET["lang"])){
-							if ( $_GET["lang"] == "en") {
+						if ( $idioma == "en") {
+							
 								echo '<h3>Devices homologated for Red Compartida (band 28/700 MHz)</h3><hr>';
 								echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</a></b></p><hr>';
 
@@ -78,7 +81,7 @@
 								$gamas = get_field_object( 'spectrum', $post_id = false );
 								$gamas = $gamas['choices'];
 
-							} 				
+										
 						}else{
 							echo '<h3>Dispositivos homologados a la Red Compartida (banda 28/700 Mhz)</h3><hr>';
 							echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
@@ -108,7 +111,18 @@
 						// GAMA
 						
 						echo '<select class="gamas form-control">';
-						echo '<option gama="todas">Todas las gamas</option>';
+						//echo '<option gama="todas">Todas las gamas</option>';
+
+						
+							if ( $idioma == "en") {
+				 					echo '<option gama="todas">All specification types</option>';
+								} 				
+							else{
+								echo '<option gama="todas">Todas las gamas</option>';
+							}
+		 
+
+
 						foreach ($gamas as $key => $valueG) {
 							echo '<option gama="'.$valueG.'" ';
 							
@@ -123,7 +137,17 @@
 						// MARCA
 
 						echo '<select class="marcas form-control">';
-						echo '<option marca="todas">Todas las marcas</option>';
+						//echo '<option marca="todas">Todas las marcas</option>';
+
+
+							if ( $idioma == "en") {
+				 					echo '<option marca="todas">All brands</option>';
+								} 				
+							else{
+								echo '<option marca="todas">Todas las marcas</option>';
+							}
+
+
 						foreach ($marcas as $key => $value) {
 							echo '<option marca="'.$value.'" ';
 							
@@ -135,13 +159,42 @@
 						}
 						echo '</select><br>';
 
-						echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APLICAR FILTRO</a>';
+
+
+						if ( $idioma == "en") {
+				 				echo '<a class="filtrarEN vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APPLY FILTER</a>';
+				 			} 				
+						else{
+							echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APLICAR FILTRO</a>';
+						}
+		 
+
+
+						
 
 						echo '<hr>';
 
-						echo '<h5>Dispositivos compatibles con la banda 28 a nivel mundial</h5>';
-						echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Conócelos</a>';
-						echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Conócelos</a>';
+
+						if ( $idioma == "en") {
+				 				echo '<h5>Devices compatible with band 28 worldwide</h5>';
+				 			} 				
+						else{
+							echo '<h5>Dispositivos compatibles con la banda 28 a nivel mundial</h5>';
+						}
+
+
+
+						if ( $idioma == "en") {
+							echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Look up</a>';
+								echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Look up</a>';
+				 			} 				
+						else{
+							echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Conócelos</a>';
+							echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Conócelos</a>';
+						}
+
+						
+						
 					?>
 
 					
@@ -152,11 +205,10 @@
 
 					<h3>
 						<?php
-						if (isset($_GET["lang"])){
-							if ( $_GET["lang"] == "en") {
+						if ( $idioma == "en") {
 				 				echo "Press Room";
 							} 				
-							}else{
+							else{
 								echo "Sala de Prensa";
 							}
 		 			?>
@@ -182,21 +234,19 @@
 
 	             	<h5>
 	             		<?php
-						if (isset($_GET["lang"])){
-							if ( $_GET["lang"] == "en") {
+						if ( $idioma == "en") {
 				 				echo "Press request:";
 							} 				
-							}else{
+							else{
 								echo "Peticiones de prensa:";
 							}
 		 				?><br>
 						<span style="color: #c41f30">prensaaltanredes@gcya.mx <br>
 						<?php
-						if (isset($_GET["lang"])){
-							if ( $_GET["lang"] == "en") {
+						if ( $idioma == "en") {
 				 				echo "Phone";
 							} 				
-							}else{
+							else{
 								echo "Tel.";
 							}
 		 				?> (+52 55) 5246 0100 Exts. 274 & 301</span>
@@ -217,21 +267,32 @@
 			if ($current_cat->slug == 'boletines') {
 				$template = 'default';
 				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+			}else if ($current_cat->slug == 'newsletters') {
+				$template = 'default';
+				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
 			}else if($current_cat->slug == 'ficha-tecnica') {
 				$template = 'template_1';
 				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+			}else if($current_cat->slug == 'data-sheet') {
+				$template = 'template_1';
+				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
 			}else if ($current_cat->slug == 'biografias-de-directivos') {
 				$template = 'template_1';
 				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="4" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
 			}else if ($current_cat->slug == 'fotos') {
 				echo 'En construcción';
+			}else if ($current_cat->slug == 'photos') {
+				echo 'On build';
 			}else if ($current_cat->slug == 'videos') {
 				echo get_template_part('menu', 'videos');
 				echo do_shortcode('[yottie id="1"]');	
-			}else if ($current_cat->slug == 'gif') {
+			}else if ($current_cat->slug == 'videos-en') {
+				echo get_template_part('menu', 'videos');
+				echo do_shortcode('[yottie id="1"]');	
+			}else if ($current_cat->slug == 'gif' || $current_cat->slug == 'gif-en') {
 				echo get_template_part('menu', 'videos');
 				echo do_shortcode('[gif]');
-			}else if ($current_cat->slug == 'infografias') {
+			}else if ($current_cat->slug == 'infografias' || $current_cat->slug == 'info') {
 				echo get_template_part('menu', 'videos');
 				echo do_shortcode('[yottie id="3"]');
 			}else if ($current_cat->slug == 'dispositivos') {
@@ -264,6 +325,34 @@
 				}
 
 				
+			}else if ($current_cat->slug == 'devices') {
+				$template = 'template_3';
+				// $Marca y $Gama
+				if (isset($_GET['marca'])) {
+					$Marca = $_GET['marca'];
+				}else{$Marca = 'todas';}
+				if (isset($_GET['gama'])) {
+					$Gama = $_GET['gama'];
+				}else{$Gama = 'todas';}
+
+				// 
+				
+				if ($Gama == 'todas' & $Marca == 'todas') {
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
+				}
+				if ($Gama != 'todas' & $Marca == 'todas') {
+					$cualGama = $Gama;					
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="spectrum" meta_value="'.$cualGama.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
+				}
+				if ($Gama == 'todas' & $Marca != 'todas') {
+					$cualMarca = $Marca;
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="brand" meta_value="'.$cualMarca.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
+				}
+				if ($Marca != 'todas' & $Gama != 'todas') {
+					$cualGama = $Gama;
+					$cualMarca = $Marca;
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="brand:spectrum" meta_value="'.$cualMarca.':'.$cualGama.'" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="AND" scroll="false" transition="fade" transition_container="false" button_label="See more" button_loading_label="Loading..."]');
+				}
 			}
 			
 			
@@ -306,7 +395,12 @@ $(document).ready(function(){
 			
 			window.location = '<?php echo get_site_url(); ?>/category/dispositivos/?gama='+gama+'&marca='+marca;
 		});
-
+		$('a.filtrarEN').click(function(){
+			var gama = $('option:selected', '.gamas').attr('gama');
+			var marca = $('option:selected', '.marcas').attr('marca');
+			
+			window.location = '<?php echo get_site_url(); ?>/en/category/devices/?gama='+gama+'&marca='+marca;
+		});
 		
  
 

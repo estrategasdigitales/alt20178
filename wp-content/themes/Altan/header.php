@@ -9,10 +9,22 @@
 	<meta http-equiv="Expires" content="0">
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon_altan.png" type="image/x-icon" />
 
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121021741-1"></script>
+	<script>
+ 		window.dataLayer = window.dataLayer || [];
+ 		function gtag(){dataLayer.push(arguments);}
+ 		gtag('js', new Date());
+
+ 		gtag('config', 'UA-121021741-1');
+	</script>
+
+	
 
 <?php 
 if (is_category('dispositivos') || is_page('que-ofrecemos')) {
@@ -102,7 +114,7 @@ if (is_front_page()) {
 <div id="header">
 	
 	<div class="container" style="position:relative">
-		<h1>akjhakjsdhaskjdhajsdhas</h1>
+		
 		<nav class="navbar navbar-expand-lg row">
 		  <a class="navbar-brand" href="<?php echo get_site_url(); ?>">
 		  <?php

@@ -4,7 +4,7 @@ Plugin Name: Duplicate Page
 Plugin URI: https://wordpress.org/plugins/duplicate-page/
 Description: Duplicate Posts, Pages and Custom Posts using single click.
 Author: mndpsingh287
-Version: 2.5
+Version: 2.7
 Author URI: https://profiles.wordpress.org/mndpsingh287/
 License: GPLv2
 Text Domain: duplicate-page
@@ -80,7 +80,7 @@ if(!class_exists('duplicate_page')):
 		public function dt_duplicate_post_as_draft(){
 		global $wpdb;
 		$opt = get_option('duplicate_page_options');
-		$suffix = !empty($opt['duplicate_post_suffix']) ? ' -- '.$opt['duplicate_post_suffix'] : '';
+		$suffix = isset($opt['duplicate_post_suffix']) && !empty($opt['duplicate_post_suffix']) ? ' -- '.$opt['duplicate_post_suffix'] : '';
 		$post_status = !empty($opt['duplicate_post_status']) ? $opt['duplicate_post_status'] : 'draft';	
 		$redirectit = !empty($opt['duplicate_post_redirect']) ? $opt['duplicate_post_redirect'] : 'to_list';	 
 					 if (! ( isset( $_GET['post']) || isset( $_POST['post']) || ( isset($_REQUEST['action']) && 'dt_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
@@ -109,19 +109,19 @@ if(!class_exists('duplicate_page')):
 				 * new post data array
 				 */
 				 $args = array(
-				 'comment_status' => $post->comment_status,
-				 'ping_status' => $post->ping_status,
-				 'post_author' => $new_post_author,
-				 'post_content' => $post->post_content,
-				 'post_excerpt' => $post->post_excerpt,
-				 //'post_name' => $post->post_name,
-				 'post_parent' => $post->post_parent,
-				 'post_password' => $post->post_password,
-				 'post_status' => $post_status,
-				 'post_title' => $post->post_title.$suffix,
-				 'post_type' => $post->post_type,
-				 'to_ping' => $post->to_ping,
-				 'menu_order' => $post->menu_order
+					 'comment_status' => $post->comment_status,
+					 'ping_status' => $post->ping_status,
+					 'post_author' => $new_post_author,
+					 'post_content' => $post->post_content,
+					 'post_excerpt' => $post->post_excerpt,
+					 'post_name' => $post->post_name,
+					 'post_parent' => $post->post_parent,
+					 'post_password' => $post->post_password,
+					 'post_status' => $post_status,
+					 'post_title' => $post->post_title.$suffix,
+					 'post_type' => $post->post_type,
+					 'to_ping' => $post->to_ping,
+					 'menu_order' => $post->menu_order
 				 ); 
 				 /*
 				 * insert the post by wp_insert_post() function
@@ -215,20 +215,6 @@ if(!class_exists('duplicate_page')):
 				'href' => admin_url().'admin.php?action=dt_duplicate_post_as_draft&amp;post='. $post->ID
 				) );
 			}
-		}
-		public function duplicate_page_adsense() {
-			    $API = "http://www.webdesi9.com/adsense/";
-				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, $API);
-				curl_setopt($curl, CURLOPT_POST, 1);
-				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-				curl_setopt($curl, CURLOPT_POSTFIELDS, "ad_token=DUP_3951m8635u6542n3819i69130s9372h5602");
-				$result = curl_exec ($curl); 
-				$data = json_decode($result, true);
-				curl_close ($curl);
-				if(!empty($data) && $data['status'] == 1 && !empty($data['image'])) {
-					return '<a href="'.$data['link'].'" target="_blank" title="Click here"><img src="'.$data['image'].'" width="100%"></a>';
-				}
 		}
 		/*
 		 * Redirect function

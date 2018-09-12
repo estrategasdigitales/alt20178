@@ -1,0 +1,454 @@
+<?php get_header(); ?>
+
+<style type="text/css">
+	body {background-color: #f9f9f9;}
+	#cat-bloque {
+		padding-top: 50px;}
+		#cat-bloque p {line-height: 21px;margin-bottom: 10px;}
+	
+	#cat-bloque ul {
+		list-style-type: none;
+		padding-left: 0;
+		margin-left: 0;
+		font-family: 'Khand', sans-serif;
+    	font-weight: bold;
+    	font-size: 1.25rem;
+	}
+	#cat-bloque ul li {
+		border-left: 3px solid transparent;
+		margin-bottom: .5rem;
+	}
+	#cat-bloque ul li a {
+	    color: #000;
+    text-decoration: none;
+	}
+	#cat-bloque a {cursor: pointer;display: block;border-left: 3px solid transparent; padding-left: 10px}
+	#cat-bloque li.current-cat a {
+		border-left: 3px solid #000;
+	}
+	#cat-bloque a {
+		color: #000;
+		text-decoration: none;
+	}
+
+
+	#cont-bloque {
+		background-color: #efefef;
+		padding-top: 50px;
+		padding-bottom: 30px;
+		min-height: 700px;
+	}
+	#cont-bloque p, #cont-bloque li {margin-bottom: 10px;}
+	.hover-rojo {
+		-webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+	}
+	.hover-rojo:hover {
+		color: #c41f30 !important;
+	}
+	
+	
+</style>
+
+
+<div class="container-fluid">
+
+	<div class="container">
+	
+	<div class="row">
+		
+		<div id="cat-bloque" class="col-md-4 franja-izquierda">
+			
+			
+
+				
+					<?php $current_cat = get_category($cat); 
+					
+					if ($current_cat->slug == 'dispositivos' || $current_cat->slug == 'devices') {
+
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+								echo '<h3>Devices homologated for Red Compartida (band 28/700 MHz)</h3><hr>';
+								echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</a></b></p><hr>';
+
+								$marcas = get_field_object( 'brand', $post_id = false );						 
+								$marcas = $marcas['choices'];
+								$gamas = get_field_object( 'spectrum', $post_id = false );
+								$gamas = $gamas['choices'];
+
+							} 				
+						}else{
+							echo '<h3>Dispositivos homologados a la Red Compartida (banda 28/700 Mhz)</h3><hr>';
+							echo '<p><b><a href="javascript:history.back()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Regresar</a></b></p><hr>';
+
+							$marcas = get_field_object( 'marca', $post_id = false );						 
+							$marcas = $marcas['choices'];
+							$gamas = get_field_object( 'gama', $post_id = false );
+							$gamas = $gamas['choices'];					
+						}
+
+						
+
+						
+						
+						if (isset($_GET['marca'])) {
+							$cualMarca = $_GET['marca'];
+						}else{
+							$cualMarca = '';
+						}
+
+						if (isset($_GET['gama'])) {
+							$cualGama = $_GET['gama'];
+						}else{
+							$cualGama = '';
+						}
+												
+						// GAMA
+						
+						echo '<select class="gamas form-control">';
+						//echo '<option gama="todas">Todas las gamas</option>';
+
+						
+							if (isset($_GET["lang"])){
+								if ( $_GET["lang"] == "en") {
+				 					echo '<option gama="todas">All specification types</option>';
+								} 				
+							}else{
+								echo '<option gama="todas">Todas las gamas</option>';
+							}
+		 
+
+
+						foreach ($gamas as $key => $valueG) {
+							echo '<option gama="'.$valueG.'" ';
+							
+							if ($valueG == $cualGama) {
+								echo 'selected';
+							}
+							
+							echo' >'.$valueG.'</option>';
+						}
+						echo '</select><br>';						
+
+						// MARCA
+
+						echo '<select class="marcas form-control">';
+						//echo '<option marca="todas">Todas las marcas</option>';
+
+
+							if (isset($_GET["lang"])){
+								if ( $_GET["lang"] == "en") {
+				 					echo '<option marca="todas">All brands</option>';
+								} 				
+							}else{
+								echo '<option marca="todas">Todas las marcas</option>';
+							}
+
+
+						foreach ($marcas as $key => $value) {
+							echo '<option marca="'.$value.'" ';
+							
+							if ($value == $cualMarca) {
+								echo 'selected';
+							}
+							
+							echo' >'.$value.'</option>';
+						}
+						echo '</select><br>';
+
+
+
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APPLY FILTER</a>';
+				 			} 				
+						}else{
+							echo '<a class="filtrar vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">APLICAR FILTRO</a>';
+						}
+		 
+
+
+						
+
+						echo '<hr>';
+
+
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo '<h5>Devices compatible with band 28 worldwide</h5>';
+				 			} 				
+						}else{
+							echo '<h5>Dispositivos compatibles con la banda 28 a nivel mundial</h5>';
+						}
+
+
+
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Look up</a>';
+								echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Look up</a>';
+				 			} 				
+						}else{
+							echo '<a href="https://m.gsmarena.com/results.php3?nYearMin=2014&s4Gs=28" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;margin-right:10px;">Conócelos</a>';
+							echo '<a href="https://www.frequencycheck.com/models?q%5Bfrequency_bands_id_eq%5D=26" target="_blank" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-danger" style="display:inline-block;padding:15px 25px !important;margin-bottom:15px;">Conócelos</a>';
+						}
+
+						
+						
+					?>
+
+					
+					
+					<?php
+					}else{
+					?>
+
+					<h3>
+						<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Press Room";
+							} 				
+							}else{
+								echo "Sala de Prensa";
+							}
+		 			?>
+					</h3>
+					
+					<ul>
+						<?php 
+							 $args = array(
+							                'hide_empty' => 0,
+							                'title_li' => false,
+							                'style' => 'list',
+							                'child_of' => 6,
+							                'order' => 'ASC',
+							                'order_by' => 'date',
+							                'depth' => 1,
+							            	);
+
+			            	wp_list_categories($args);
+		             	?>
+	             	</ul>
+
+	             	<hr>
+
+	             	<h5>
+	             		<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Press request:";
+							} 				
+							}else{
+								echo "Peticiones de prensa:";
+							}
+		 				?><br>
+						<span style="color: #c41f30">prensaaltanredes@gcya.mx <br>
+						<?php
+						if (isset($_GET["lang"])){
+							if ( $_GET["lang"] == "en") {
+				 				echo "Phone";
+							} 				
+							}else{
+								echo "Tel.";
+							}
+		 				?> (+52 55) 5246 0100 Exts. 274 & 301</span>
+	             	</h5>
+	             	<?php } ?>
+				
+
+			
+		</div> <!-- preguntas bloque -->
+
+		<div id="cont-bloque" class="col-md-8">
+
+			
+			
+			<?php
+			// echo $current_cat->slug;
+
+			if ($current_cat->slug == 'boletines') {
+				$template = 'default';
+				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+			}else if($current_cat->slug == 'ficha-tecnica') {
+				$template = 'template_1';
+				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+			}else if ($current_cat->slug == 'biografias-de-directivos') {
+				$template = 'template_1';
+				echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="4" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+			}else if ($current_cat->slug == 'fotos') {
+				echo 'En construcción';
+			}else if ($current_cat->slug == 'videos') {
+				echo get_template_part('menu', 'videos');
+				echo do_shortcode('[yottie id="1"]');	
+			}else if ($current_cat->slug == 'gif') {
+				echo get_template_part('menu', 'videos');
+				echo do_shortcode('[gif]');
+			}else if ($current_cat->slug == 'infografias') {
+				echo get_template_part('menu', 'videos');
+				echo do_shortcode('[yottie id="3"]');
+			}else if ($current_cat->slug == 'dispositivos') {
+				$template = 'template_2';
+				// $Marca y $Gama
+				if (isset($_GET['marca'])) {
+					$Marca = $_GET['marca'];
+				}else{$Marca = 'todas';}
+				if (isset($_GET['gama'])) {
+					$Gama = $_GET['gama'];
+				}else{$Gama = 'todas';}
+
+				// 
+				
+				if ($Gama == 'todas' & $Marca == 'todas') {
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				}
+				if ($Gama != 'todas' & $Marca == 'todas') {
+					$cualGama = $Gama;					
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="gama" meta_value="'.$cualGama.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				}
+				if ($Gama == 'todas' & $Marca != 'todas') {
+					$cualMarca = $Marca;
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="marca" meta_value="'.$cualMarca.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				}
+				if ($Marca != 'todas' & $Gama != 'todas') {
+					$cualGama = $Gama;
+					$cualMarca = $Marca;
+					echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="marca:gama" meta_value="'.$cualMarca.':'.$cualGama.'" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="AND" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				}
+
+				
+			}else if ($current_cat->slug == 'devices') {
+				
+				// $Marca y $Gama
+				if (isset($_GET['marca'])) {
+					$Marca = $_GET['marca'];
+				}else{$Marca = 'todas';}
+				if (isset($_GET['gama'])) {
+					$Gama = $_GET['gama'];
+				}else{$Gama = 'todas';}
+
+				// 
+				if ($Gama == 'todas' & $Marca == 'todas') {
+					echo '<div class="row">';
+					//$post = query_posts($query_string . 'posts_per_page=6');
+					query_posts( array(
+    					'category_name'  => 'devices'    					
+					) );
+					if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+
+					echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">';
+						echo '<div class="entrada dispositivo">';
+							echo '<p><b>'; echo the_title(); echo '</b></p>';
+							echo '<p>'; echo the_field('brand'); echo '</p>';
+							the_post_thumbnail('full'); 				
+							echo '<hr>';
+							echo '<p><b>Dimensions:</b>'; echo the_field('dimensions'); echo '</p>';
+							echo '<p><b>F Cam:</b>'; echo the_field('f_cam'); echo '</p>';
+							echo '<p><b>B Cam:</b>'; echo the_field('b_cam'); echo '</p>';
+							echo '<p><b>Memory:</b>'; echo the_field('memory'); echo '</p>';
+							echo '<p><b>CPU:</b>'; echo the_field('cpu'); echo '</p>';
+							echo '<p><b>Spec:</b>'; echo the_field('spectrum'); echo '</p>';
+						echo '</div>';
+					echo '</div>';	
+					endwhile; endif; 
+			 	echo '</div>';
+			 	if (function_exists('wp_pagenavi')) wp_pagenavi();
+			 	wp_reset_query();
+				}
+				
+					// query_posts( array(
+    	// 				'category_name'  => 'dispositivos',
+    	// 				'posts_per_page' => 3
+					// ) );
+					// if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+
+					// echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">';
+					// 	echo '<div class="entrada dispositivo">';
+					// 		echo '<p><b>'; echo the_title(); echo '</b></p>';
+					// 		echo '<p>'; echo the_field('marca'); echo '</p>';
+					// 		the_post_thumbnail('full'); 				
+					// 		echo '<hr>';
+					// 		echo '<p><b>Dimensions:</b>'; echo the_field('dimensiones'); echo '</p>';
+					// 		echo '<p><b>F Cam:</b>'; echo the_field('f_cam'); echo '</p>';
+					// 		echo '<p><b>B Cam:</b>'; echo the_field('b_cam'); echo '</p>';
+					// 		echo '<p><b>Memory:</b>'; echo the_field('memoria'); echo '</p>';
+					// 		echo '<p><b>CPU:</b>'; echo the_field('cpu'); echo '</p>';
+					// 		echo '<p><b>Spec:</b>'; echo the_field('gama'); echo '</p>';
+					// 	echo '</div>';
+					// echo '</div>';			 	   				
+			 	// 	endwhile; endif; 
+			 	// echo '</div>';
+			 	// if (function_exists('wp_pagenavi')) wp_pagenavi();
+			 	// wp_reset_query();
+			 		
+				//
+				
+				// if ($Gama == 'todas' & $Marca == 'todas') {
+				// 	echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				// }
+				// if ($Gama != 'todas' & $Marca == 'todas') {
+				// 	$cualGama = $Gama;					
+				// 	echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="gama" meta_value="'.$cualGama.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				// }
+				// if ($Gama == 'todas' & $Marca != 'todas') {
+				// 	$cualMarca = $Marca;
+				// 	echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="marca" meta_value="'.$cualMarca.'" meta_compare="IN" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				// }
+				// if ($Marca != 'todas' & $Gama != 'todas') {
+				// 	$cualGama = $Gama;
+				// 	$cualMarca = $Marca;
+				// 	echo do_shortcode('[ajax_load_more repeater="'.$template.'" container_type="div" css_classes="row" post_type="post" posts_per_page="6" category="'.$current_cat->slug.'" meta_key="marca:gama" meta_value="'.$cualMarca.':'.$cualGama.'" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="AND" scroll="false" transition="fade" transition_container="false" button_label="Ver más" button_loading_label="Cargando..."]');
+				// }
+			}
+			
+			
+			?>
+
+			
+		</div>
+
+	</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$(document).on('click', '.popmake-461', function(){
+    	cual = $(this).attr('descarga');
+    	// $('input[name="ficha"]').attr({'disabled':'true'});
+    	$('input[name="ficha"]').val(cual);
+	});
+
+	
+      // SELECT MARCA ACCIÓN SOLO DE ËSTE SELECT
+      // $('.marcas').on('change', function(){
+      //     var disp = $('option:selected', this).attr('marca');
+      //     if (disp) {
+      //         window.location = '<?php echo get_site_url(); ?>/category/dispositivos/?marca='+disp;          
+      //     }else{
+      //     	  window.location = '<?php echo get_site_url(); ?>/category/dispositivos/';
+      //     }
+          
+      // });
+
+		$('a.filtrar').click(function(){
+			var gama = $('option:selected', '.gamas').attr('gama');
+			var marca = $('option:selected', '.marcas').attr('marca');
+			
+			window.location = '<?php echo get_site_url(); ?>/category/dispositivos/?gama='+gama+'&marca='+marca;
+		});
+
+		
+ 
+
+});
+
+</script>
+
+<?php get_footer(); ?>

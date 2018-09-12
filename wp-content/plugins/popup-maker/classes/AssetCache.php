@@ -32,6 +32,11 @@ class PUM_AssetCache {
 	public static $css_url;
 
 	/**
+	 * @var bool
+	 */
+	public static $disabled = true;
+
+	/**
 	 * @var
 	 */
 	public static $debug;
@@ -50,17 +55,29 @@ class PUM_AssetCache {
 			self::$asset_url = Popup_Maker::$URL . 'assets/';
 			self::$js_url    = self::$asset_url . 'js/';
 			self::$css_url   = self::$asset_url . 'css/';
+			self::$disabled  = pum_get_option( 'disable_asset_caching', false );
 
-			add_action( 'pum_extension_updated', array( __CLASS__, 'regenerate_cache' ) );
-			add_action( 'pum_extension_deactivated', array( __CLASS__, 'regenerate_cache' ) );
-			add_action( 'pum_extension_activated', array( __CLASS__, 'regenerate_cache' ) );
-			add_action( 'pum_regenerate_asset_cache', array( __CLASS__, 'regenerate_cache' ) );
-			add_action( 'pum_save_popup', array( __CLASS__, 'regenerate_cache' ) );
-			add_action( 'popmake_save_popup_theme', array( __CLASS__, 'regenerate_cache' ) );
+			add_action( 'pum_extension_updated', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_extension_deactivated', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_extension_activated', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_regenerate_asset_cache', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_save_settings', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_save_popup', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'popmake_save_popup_theme', array( __CLASS__, 'reset_cache' ) );
+			add_action( 'pum_update_core_version', array( __CLASS__, 'reset_cache' ) );
 
 			// Prevent reinitialization.
 			self::$initialized = true;
 		}
+	}
+
+	/**
+	 * Checks if Asset caching is possible and enabled.
+	 *
+	 * @return bool
+	 */
+	public static function enabled() {
+		return self::writeable() && ! self::$disabled;
 	}
 
 	/**
@@ -69,6 +86,11 @@ class PUM_AssetCache {
 	 * @return bool
 	 */
 	public static function writeable() {
+		// TODO Remove this once all extensions have been thoroughly updated with time to get them to users.
+		if ( self::$disabled ) {
+			return false;
+		}
+
 		// Check and create cachedir
 		if ( ! is_dir( self::$cache_dir ) ) {
 
@@ -168,7 +190,7 @@ class PUM_AssetCache {
 				PUM_Site_Popups::current_popup( $query->post );
 
 				// Preprocess the content for shortcodes that need to enqueue their own assets.
-				do_shortcode( $query->post->post_content );
+				PUM_Helpers::do_shortcode( $query->post->post_content );
 
 				ob_start();
 
@@ -227,7 +249,7 @@ class PUM_AssetCache {
 		/** @var WP_Filesystem_Base $wp_filesystem */
 		global $wp_filesystem;
 
-		return $wp_filesystem->put_contents( $file, $contents, FS_CHMOD_FILE );
+		return $wp_filesystem->put_contents( $file, $contents, defined( 'FS_CHMOD_FILE' ) ? FS_CHMOD_FILE : false );
 	}
 
 	/**
@@ -237,20 +259,7 @@ class PUM_AssetCache {
 	 */
 	public static function generate_css() {
 		// Include core styles so we can eliminate another stylesheet.
-		$core_css = file_get_contents(Popup_Maker::$DIR . 'assets/css/site' . self::$suffix . '.css' );
-
-		// Reset ob.
-		ob_start();
-
-		// Render any extra styles globally added.
-		if ( ! empty( $GLOBALS['pum_extra_styles'] ) ) {
-			echo $GLOBALS['pum_extra_styles'];
-		}
-
-		// Allows rendering extra css via action.
-		do_action( 'pum_styles' );
-
-		$custom_css = ob_get_clean();
+		$core_css = file_get_contents( Popup_Maker::$DIR . 'assets/css/site' . self::$suffix . '.css' );
 
 		/**
 		 *  0 Core
@@ -259,48 +268,27 @@ class PUM_AssetCache {
 		 * 10 Per Popup CSS
 		 */
 		$css = array(
-			'core'   => array(
+			'imports' => array(
+				'content'  => self::generate_font_imports(),
+				'priority' => - 1,
+			),
+			'core'    => array(
 				'content'  => $core_css,
 				'priority' => 0,
 			),
-			'themes' => array(
+			'themes'  => array(
 				'content'  => self::generate_popup_theme_styles(),
 				'priority' => 1,
 			),
-			'custom' => array(
-				'content'  => $custom_css,
-				'priority' => 10,
+			'popups'  => array(
+				'content'  => self::generate_popup_styles(),
+				'priority' => 15,
+			),
+			'custom'  => array(
+				'content'  => self::custom_css(),
+				'priority' => 20,
 			),
 		);
-
-		$query = PUM_Popups::get_all();
-
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) : $query->next_post();
-				// Set this popup as the global $current.
-				PUM_Site_Popups::current_popup( $query->post );
-
-				// Preprocess the content for shortcodes that need to enqueue their own assets.
-				do_shortcode( $query->post->post_content );
-
-				ob_start();
-
-				// Allow per popup CSS additions.
-				do_action( 'pum_generate_popup_css', $query->post->ID );
-
-				$popup_css = ob_get_clean();
-
-				if ( ! empty( $popup_css ) ) {
-					$css[ 'popup-' . $query->post->ID ] = array(
-						'content'  => $popup_css,
-						'priority' => 11,
-					);
-				}
-			endwhile;
-
-			// Clear the global $current.
-			PUM_Site_Popups::current_popup( null );
-		}
 
 		$css = apply_filters( 'pum_generated_css', $css );
 
@@ -321,8 +309,49 @@ class PUM_AssetCache {
 		}
 
 		return $css_code;
+	}
 
+	/**
+	 * @return string
+	 */
+	public static function generate_popup_styles() {
+		$query = PUM_Popups::get_all();
 
+		$popup_css = '';
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) : $query->next_post();
+				// Set this popup as the global $current.
+				PUM_Site_Popups::current_popup( $query->post );
+
+				// Preprocess the content for shortcodes that need to enqueue their own assets.
+				PUM_Helpers::do_shortcode( $query->post->post_content );
+
+				$popup = pum_get_popup( $query->post->ID );
+
+				if ( ! pum_is_popup( $popup ) ) {
+					continue;
+				}
+
+				ob_start();
+
+				if ( $popup->get_setting( 'zindex', false ) ) {
+					$zindex = absint( $popup->get_setting( 'zindex' ) );
+					echo "#pum-{$popup->ID} {z-index: $zindex}\r\n";
+				}
+
+				// Allow per popup CSS additions.
+				do_action( 'pum_generate_popup_css', $popup->ID );
+
+				$popup_css .= ob_get_clean();
+
+			endwhile;
+
+			// Clear the global $current.
+			PUM_Site_Popups::current_popup( null );
+		}
+
+		return $popup_css;
 	}
 
 	/**
@@ -333,7 +362,28 @@ class PUM_AssetCache {
 	public static function inline_css() {
 		ob_start();
 
+		echo self::generate_font_imports();
 		echo self::generate_popup_theme_styles();
+
+		echo self::generate_popup_styles();
+
+		// Render any extra styles globally added.
+		if ( ! empty( $GLOBALS['pum_extra_styles'] ) ) {
+			echo $GLOBALS['pum_extra_styles'];
+		}
+
+		// Allows rendering extra css via action.
+		do_action( 'pum_styles' );
+
+		return ob_get_clean();
+	}
+
+	/**
+	 * @return string
+	 */
+	public static function custom_css() {
+		// Reset ob.
+		ob_start();
 
 		// Render any extra styles globally added.
 		if ( ! empty( $GLOBALS['pum_extra_styles'] ) ) {
@@ -351,23 +401,16 @@ class PUM_AssetCache {
 	 *
 	 * @return mixed|string
 	 */
-	public static function generate_popup_theme_styles() {
-		$styles = '';
+	public static function generate_font_imports() {
+		$imports = '';
 
 		$google_fonts = array();
 
 		foreach ( popmake_get_all_popup_themes() as $theme ) {
-			$theme_styles = pum_render_theme_styles( $theme->ID );
-
 			$google_fonts = array_merge( $google_fonts, popmake_get_popup_theme_google_fonts( $theme->ID ) );
-
-			if ( $theme_styles != '' ) {
-				$styles .= "/* Popup Theme " . $theme->ID . ": " . $theme->post_title . " */\r\n";
-				$styles .= $theme_styles . "\r\n";
-			}
 		}
 
-		if ( ! empty( $google_fonts ) && ! popmake_get_option( 'disable_google_font_loading', false ) ) {
+		if ( ! empty( $google_fonts ) && ! pum_get_option( 'disable_google_font_loading', false ) ) {
 			$link = "//fonts.googleapis.com/css?family=";
 			foreach ( $google_fonts as $font_family => $variants ) {
 				if ( $link != "//fonts.googleapis.com/css?family=" ) {
@@ -382,13 +425,36 @@ class PUM_AssetCache {
 				}
 			}
 
-			$styles = "/* Popup Google Fonts */\r\n@import url('$link');\r\n\r\n" . $styles;
+			$imports = "/* Popup Google Fonts */\r\n@import url('$link');\r\n\r\n" . $imports;
+		}
+
+		$imports = apply_filters( 'pum_generate_font_imports', $imports );
+
+		return $imports;
+	}
+
+	/**
+	 * Generate Popup Theme Styles
+	 *
+	 * @return mixed|string
+	 */
+	public static function generate_popup_theme_styles() {
+		$styles = '';
+
+		foreach ( popmake_get_all_popup_themes() as $theme ) {
+			$theme_styles = pum_render_theme_styles( $theme->ID );
+
+			if ( $theme_styles != '' ) {
+				$styles .= "/* Popup Theme " . $theme->ID . ": " . $theme->post_title . " */\r\n";
+				$styles .= $theme_styles . "\r\n";
+			}
 		}
 
 		$styles = apply_filters( 'popmake_theme_styles', $styles );
 
 		return $styles;
 	}
+
 
 	/**
 	 * Reset the cache to force regeneration.

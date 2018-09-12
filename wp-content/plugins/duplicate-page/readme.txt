@@ -1,9 +1,9 @@
 === Duplicate Page ===
 Contributors: mndpsingh287
-Tags: Page Duplicate, Post duplicate, duplicate custom posts, duplicate page, duplicate post, duplicate ,custom posts, post, page, duplicate this, duplicate, content duplicate, duplicate content, data duplicate, duplicate data, copy page, clone page,wordpress page duplicate, wordpress post duplicate, Copy post, wordpress page duplicator, wordpress post duplicator, Cloner
+Tags: Page Duplicate, Post duplicate, duplicate custom posts, duplicate page, duplicate post, duplicate ,custom posts, post, page, duplicate this, duplicate, content duplicate, duplicate content, data duplicate, duplicate data, copy page, clone page,wordpress page duplicate, wordpress post duplicate, Copy post, wordpress page duplicator, wordpress post duplicator, Cloner, duplicate post
 Requires at least: 3.4
-Tested up to: 4.9.2
-Stable tag: 2.5
+Tested up to: 4.9.7
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,10 +25,10 @@ Duplicate Posts, Pages and Custom Posts easily using single click. You can dupli
 * **Post Suffix:** Option to add Post Suffix.
 * **Editor**: And Many More Filters and Features.
 
-> <strong>[Buy Pro Version](http://www.webdesi9.com/product/duplicate-page-pro/)</strong> with various features & support.
-> <strong>[Contact us](http://www.webdesi9.com/support/)</strong> for Support Only Pro Version Users.
+> <strong>[Buy Pro Version](https://webdesi9.com/product/duplicate-page-pro/)</strong> with various features & support.
+> <strong>[Contact us](https://webdesi9.com/support/)</strong> for Support Only Pro Version Users.
 
-**[Upgrade to Pro Version](http://www.webdesi9.com/product/duplicate-page-pro/)**
+**[Upgrade to Pro Version](https://webdesi9.com/product/duplicate-page-pro/)**
 
 https://www.youtube.com/watch?v=Fj8BHxvebXs&feature=youtu.be
 
@@ -91,6 +91,15 @@ https://www.youtube.com/watch?v=Fj8BHxvebXs&feature=youtu.be
 = 2.5 (5th Feb, 2018) =
 
 * Translations issue resolve.
+
+= 2.6 (24th March, 2018) =
+
+* Added signup popup and minor fixes.
+
+= 2.7 (28th July, 2018) =
+
+* removed useless adsense code
+
 
 == Other Notes ==
 
