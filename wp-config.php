@@ -1,4 +1,20 @@
 <?php
+
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Dotenv.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Loader.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Validator.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Exception/ExceptionInterface.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Exception/InvalidCallbackException.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Exception/InvalidFileException.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Exception/InvalidPathException.php';
+require __DIR__ . '/vendor/vlucas/phpdotenv/src/Exception/ValidationException.php';
+
+$dotenv = new Dotenv\Dotenv( ABSPATH );
+$dotenv->load();
+header('X-Frame-Options: SAMEORIGIN');
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
 /** 
  * Configuración básica de WordPress.
  *
@@ -16,23 +32,19 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'altanv2');
+define('DB_NAME', getenv('DB_WP_NAME'));
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', 'root');
+define('DB_USER', getenv('DB_WP_USER'));
 
 /** Tu contraseña de MySQL */
-<<<<<<< HEAD
-define('DB_PASSWORD', 'QUfFOW3i5i3v');
-=======
-define('DB_PASSWORD', 'contrasena');
->>>>>>> 86d8098a92e981f0f9f0bc575164e6c032d6bf59
+define('DB_PASSWORD', getenv('DB_WP_PASSWORD'));
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', 'localhost');
+define('DB_HOST', getenv('DB_WP_HOST'));
 
 /** Codificación de caracteres para la base de datos. */
-define('DB_CHARSET', 'utf8');
+define('DB_CHARSET', 'utf8mb4');
 
 /** Cotejamiento de la base de datos. No lo modifiques si tienes dudas. */
 define('DB_COLLATE', '');
@@ -63,7 +75,7 @@ define('NONCE_SALT', 'pon aquí tu frase aleatoria'); // Cambia esto por tu fras
  * Cambia el prefijo si deseas instalar multiples blogs en una sola base de datos.
  * Emplea solo números, letras y guión bajo.
  */
-$table_prefix  = 'wp_';
+$table_prefix  = getenv('DB_WP_PREFIX');
 
 
 /**
@@ -73,7 +85,12 @@ $table_prefix  = 'wp_';
  * Se recomienda encarecidamente a los desarrolladores de temas y plugins que usen WP_DEBUG
  * en sus entornos de desarrollo.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', getenv( 'APP_DEBUG' ));
+define('WP_HOME', 'https://' . getenv( 'HOST_NAME'));
+define('WP_SITEURL', 'https://' . getenv( 'HOST_NAME'));
+define('WP_CONTENT_URL', '/wp-content');
+define('DOMAIN_CURRENT_SITE', getenv( 'HOST_NAME' ));
+define('RELOCATE', true);
 define('WP_MEMORY_LIMIT', '1024M');
 define('FS_METHOD', 'direct');
 
